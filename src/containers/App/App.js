@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { NavLink, Link, Route } from 'react-router-dom';
 import { connect } from 'react-redux';
 import apiKey from '../../apiKey.js';
+import CardContainer from '../CardContainer/CardContainer'
 import { fetchMovies } from '../../actions'
 import './App.css';
 
@@ -27,6 +28,7 @@ class App extends Component {
         <header className="App-header">
           <h1 className="App-title">Welcome to React</h1>
         </header>
+        <CardContainer />
       </div>
     );
   }
