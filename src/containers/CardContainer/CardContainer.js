@@ -4,11 +4,14 @@ import Card from '../../components/Card/Card'
 import './CardContainer.css'
 
 
-export const CardContainer = (props) => {
-  console.log(props)
+export const CardContainer = ({movies}) => {
+  const cards = movies.map((movie) => {
+    return <Card />
+  })
+  
   return (
     <div>
-      <Card />
+      {cards}
     </div>
     )
 }
