@@ -19,7 +19,7 @@ class App extends Component {
 
 
     //dispatch action to set the store
-    this.props.handleFetch(movies)
+    this.props.handleFetch(movies.results)
   }
 
   render() {

@@ -1,12 +1,14 @@
 import React from 'react'
 import { connect } from 'react-redux'
+import Card from '../../components/Card/Card'
 import './CardContainer.css'
 
 
-export const CardContainer = () => {
+export const CardContainer = (props) => {
+  console.log(props)
   return (
     <div>
-      Card Container
+      <Card />
     </div>
     )
 }
