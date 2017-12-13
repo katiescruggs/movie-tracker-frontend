@@ -1,23 +1,26 @@
-import React from 'react'
-import { connect } from 'react-redux'
-import Card from '../../components/Card/Card'
-import './CardContainer.css'
+import React from 'react';
+import { connect } from 'react-redux';
+import Card from '../../components/Card/Card';
+import './CardContainer.css';
 
 
 export const CardContainer = ({movies}) => {
   const cards = movies.map((movie) => {
-    return <Card />
-  })
-  
+    return <Card
+              key={movie.id}
+              movie={movie} 
+            />;
+  });
+
   return (
     <div>
       {cards}
     </div>
-    )
-}
+    );
+};
 
 const mapStateToProps = state => {
-  return {movies: state.movies}
-}
+  return {movies: state.movies};
+};
 
-export default connect(mapStateToProps, null)(CardContainer)
+export default connect(mapStateToProps, null)(CardContainer);

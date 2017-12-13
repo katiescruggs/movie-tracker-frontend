@@ -2,15 +2,15 @@ import React, { Component } from 'react';
 import { NavLink, Link, Route } from 'react-router-dom';
 import { connect } from 'react-redux';
 import apiKey from '../../apiKey.js';
-import CardContainer from '../CardContainer/CardContainer'
-import { fetchMovies } from '../../actions'
+import CardContainer from '../CardContainer/CardContainer';
+import { fetchMovies } from '../../actions';
 import './App.css';
 
 class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-    }
+    };
   }
 
   async componentDidMount() {
@@ -19,7 +19,7 @@ class App extends Component {
 
 
     //dispatch action to set the store
-    this.props.handleFetch(movies.results)
+    this.props.handleFetch(movies.results);
   }
 
   render() {
@@ -37,10 +37,10 @@ class App extends Component {
 const mapDispatchToProps = dispatch => {
   return {
     handleFetch: (movies) => {
-      dispatch(fetchMovies(movies))
+      dispatch(fetchMovies(movies));
     }
-  }
-}
+  };
+};
 
 
-export default connect(null, mapDispatchToProps)(App)
+export default connect(null, mapDispatchToProps)(App);

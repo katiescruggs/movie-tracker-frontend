@@ -6,10 +6,10 @@ import { BrowserRouter } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import registerServiceWorker from './registerServiceWorker';
 import { createStore } from 'redux';
-import rootReducer from './reducers'
+import rootReducer from './reducers';
 
-const devTools = window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
-const store = createStore(rootReducer, devTools)
+const devTools = window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__();
+const store = createStore(rootReducer, devTools);
 
 const route = (
   <Provider store = {store}>
@@ -17,7 +17,7 @@ const route = (
       <App />
     </BrowserRouter>
   </Provider>
-)
+);
 
 ReactDOM.render(route, document.getElementById('root'));
 registerServiceWorker();
