@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
-import { withRouter } from 'react-router-dom';
+import { withRouter, Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
+import { setCurrentUser } from '../../actions';
+
 
 class Login extends Component {
   constructor() {
@@ -19,17 +21,26 @@ class Login extends Component {
   submitLogin = async (event) => {
     event.preventDefault();
 
-    const signInUser = await fetch('/api/users', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify({
-        email: this.state.email,
-        password: this.state.password
-      }) 
-    })
-    console.log(signInUser);
+    try {
+      const signInUser = await fetch('/api/users', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          email: this.state.email,
+          password: this.state.password
+        }) 
+      });
+
+      const userInfo = await signInUser.json();
+
+      console.log(userInfo.data);
+      this.props.setCurrentUser(userInfo.data);
+
+    } catch (error){
+        console.log('Email and password combination not found');
+    }
   }
 
   render() {
@@ -45,8 +56,14 @@ class Login extends Component {
   }
 }
 
-// const mapDispatchToProps = dispatch => ({
-//   submitLogin: dispatch()
-// })
+const mapDispatchToProps = dispatch => {
+  return {
+    setCurrentUser: (userInfo) => {
+      dispatch(setCurrentUser(userInfo));
+    }  
+  }
+}
 
-export default withRouter(Login);
+export default withRouter(connect(null, mapDispatchToProps)(Login));
+
+

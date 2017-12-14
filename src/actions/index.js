@@ -3,3 +3,8 @@ export const fetchMovies = (movies) => ({
   movies 
 })
 
+export const setCurrentUser = (user) => ({
+  type: 'SET_USER',
+  user
+})
+
