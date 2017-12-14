@@ -21,47 +21,25 @@ class Login extends Component {
     this.setState({[prop]: value});
   }
 
-  submitLogin = async (event, url, payload) => {
-    console.log('submit login firing')
-    event.preventDefault();
-
-    const createUser = url === '/api/users/new';
-
-    try {
-      const signInUser = await fetch(url, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(payload) 
-      });
-
-      const userInfo = await signInUser.json();
-      console.log(userInfo)
-      if(createUser) {
-        this.props.userSignupSuccess(userInfo.data);
-      } else {
-        this.props.userLoginSuccess(userInfo.data);
-      }
-
-    } catch (error){
-      console.log('Email and password combination not found');
-      if(createUser) {
-        this.props.userLoginError('Log in failed'); 
-      } else {
-        this.props.userSignupError('Sign up failed');
-      }
+  submitLogin = async (payload) => {
+    if(this.props.showRegister) {
+      this.props.userSignupAttempt(payload);
+    } else {
+      this.props.userLoginAttempt(payload);
     }
   }
 
   render() {
+    const {name, email, password} = this.state;
+
+
     if (this.props.showRegister) {
       return (
         <div className='login'>
           <input className='input-field' onChange={(event) => this.handleInputChange(event, 'name')} type="text" placeholder="Name" />
           <input className='input-field'onChange={(event) => this.handleInputChange(event, 'email')} type="email" placeholder="email" />
           <input className='input-field'onChange={(event) => this.handleInputChange(event, 'password')} type="password" placeholder="password" />
-          <button className='btn-submit'onClick={(event) => this.submitLogin(event, '/api/users/new', {name: this.state.name, email: this.state.email, password: this.state.password})}>
+          <button className='btn-submit'onClick={(event) => this.submitLogin({name, email, password})}>
             Submit
           </button>
         </div>
@@ -71,7 +49,7 @@ class Login extends Component {
       <div className='login'>
         <input className='input-field' onChange={(event) => this.handleInputChange(event, 'email')} type="email" placeholder="email" />
         <input className='input-field' onChange={(event) => this.handleInputChange(event, 'password')} type="password" placeholder="password" />
-        <button className='btn-submit' onClick={(event) => this.submitLogin(event, '/api/users', {email: this.state.email, password: this.state.password})}>
+        <button className='btn-submit' onClick={(event) => this.submitLogin({email, password})}>
           Submit
         </button>
       </div>
@@ -90,20 +68,8 @@ const mapDispatchToProps = dispatch => {
     userLoginAttempt: (userInfo) => {
       dispatch(actions.userLoginAttempt(userInfo));
     },
-    userLoginSuccess: (userInfo) => {
-      dispatch(actions.userLoginSuccess(userInfo));
-    },
-    userLoginError: (userInfo) => {
-      dispatch(actions.userLoginError(userInfo));
-    },
     userSignupAttempt: (userInfo) => {
       dispatch(actions.userSignupAttempt(userInfo));
-    },
-    userSignupSuccess: (userInfo) => {
-      dispatch(actions.userLoginSuccess(userInfo));
-    },
-    userSignupError: (userInfo) => {
-      dispatch(actions.userLoginError(userInfo));
     },
     getCurrentUser: (userInfo) => {
       dispatch(actions.getCurrentUser(userInfo));
