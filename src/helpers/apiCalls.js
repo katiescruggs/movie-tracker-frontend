@@ -10,3 +10,29 @@ export const fetchRecentMovies = async () => {
     throw Error('Fetch movies failed!');
   }
 };
+
+export const postLogin = async (userPayload) => {
+  try {
+    const fetchUser = await fetch('/api/users/', {
+      method: 'POST', 
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(userPayload)
+    });
+
+    const user = await fetchUser.json();
+    return user;
+
+  } catch (error) {
+    alert('Email/password not found');
+  }
+};
+
+export const postCreateUser = async () => {
+
+};
+
+export const getCurrentUser = async () => {
+
+};

@@ -1,4 +1,4 @@
-import { fetchRecentMovies } from '../helpers/apiCalls.js';
+import { fetchRecentMovies, postLogin } from '../helpers/apiCalls.js';
 
 export const fetchMovies = () => async (dispatch) => {
   const movies = await fetchRecentMovies();
@@ -10,10 +10,10 @@ export const setMovies = (movies) => ({
   movies  
 })
 
-export const userLoginAttempt = (user) => ({
-  type: 'USER_LOGIN_ATTEMPT',
-  user
-});
+export const userLoginAttempt = (user) => async (dispatch) => {
+  const userResponse = await postLogin();
+  dispatch(userLoginSuccess(userResponse));
+};
 
 export const userLoginSuccess = (userInfo) => ({
   type: 'USER_LOGIN_SUCCESS', 

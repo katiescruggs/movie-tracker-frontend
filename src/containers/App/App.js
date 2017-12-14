@@ -15,9 +15,6 @@ class App extends Component {
   }
 
   async componentDidMount() {
-    //const movieResponse = await fetch(`https://api.themoviedb.org/3/movie/now_playing?api_key=${apiKey}`);
-    //const movies = await movieResponse.json();
-
     this.props.handleFetch();
   }
 
