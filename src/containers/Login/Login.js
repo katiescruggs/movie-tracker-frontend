@@ -57,21 +57,21 @@ class Login extends Component {
   render() {
     if (this.props.showRegister) {
       return (
-        <div>
-          <input onChange={(event) => this.handleInputChange(event, 'name')} type="text" placeholder="Name" />
-          <input onChange={(event) => this.handleInputChange(event, 'email')} type="email" placeholder="email" />
-          <input onChange={(event) => this.handleInputChange(event, 'password')} type="password" placeholder="password" />
-          <button onClick={(event) => this.submitLogin(event, '/api/users/new', {name: this.state.name, email: this.state.email, password: this.state.password})}>
+        <div className='login'>
+          <input className='input-field' onChange={(event) => this.handleInputChange(event, 'name')} type="text" placeholder="Name" />
+          <input className='input-field'onChange={(event) => this.handleInputChange(event, 'email')} type="email" placeholder="email" />
+          <input className='input-field'onChange={(event) => this.handleInputChange(event, 'password')} type="password" placeholder="password" />
+          <button className='btn-submit'onClick={(event) => this.submitLogin(event, '/api/users/new', {name: this.state.name, email: this.state.email, password: this.state.password})}>
             Submit
           </button>
         </div>
       );
     };
     return (
-      <div>
-        <input onChange={(event) => this.handleInputChange(event, 'email')} type="email" placeholder="email" />
-        <input onChange={(event) => this.handleInputChange(event, 'password')} type="password" placeholder="password" />
-        <button onClick={(event) => this.submitLogin(event, '/api/users', {email: this.state.email, password: this.state.password})}>
+      <div className='login'>
+        <input className='input-field' onChange={(event) => this.handleInputChange(event, 'email')} type="email" placeholder="email" />
+        <input className='input-field' onChange={(event) => this.handleInputChange(event, 'password')} type="password" placeholder="password" />
+        <button className='btn-submit' onClick={(event) => this.submitLogin(event, '/api/users', {email: this.state.email, password: this.state.password})}>
           Submit
         </button>
       </div>
