@@ -1,17 +1,17 @@
-import { fetchRecentMovies, postLogin } from '../helpers/apiCalls.js';
+import { fetchRecentMovies, postLogin, postCreateUser } from '../helpers/apiCalls.js';
 
 export const fetchMovies = () => async (dispatch) => {
   const movies = await fetchRecentMovies();
   dispatch(setMovies(movies));
-}
+};
 
 export const setMovies = (movies) => ({
   type: 'SET_MOVIES',
   movies  
-})
+});
 
-export const userLoginAttempt = (user) => async (dispatch) => {
-  const userResponse = await postLogin();
+export const userLoginAttempt = (userPayload) => async (dispatch) => {
+  const userResponse = await postLogin(userPayload);
   dispatch(userLoginSuccess(userResponse));
 };
 
@@ -25,10 +25,10 @@ export const userLoginError = (user) => ({
   user
 });
 
-export const userSignupAttempt = (user) => ({
-  type: 'USER_SIGNUP_ATTEMPT',
-  user
-});
+export const userSignupAttempt = (userPayload) => async (dispatch) => {
+  const newUserResponse = await postCreateUser(userPayload);
+  dispatch(userSignupSuccess(newUserResponse));
+};
 
 export const userSignupSuccess = (userId) => ({
   type: 'USER_SIGNUP_SUCCESS',
