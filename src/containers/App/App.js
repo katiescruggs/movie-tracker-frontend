@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
-import { NavLink, Link, Route } from 'react-router-dom';
+import { Switch, NavLink, Link, Route } from 'react-router-dom';
 import { connect } from 'react-redux';
 import apiKey from '../../apiKey.js';
 import CardContainer from '../CardContainer/CardContainer';
+import Login from '../Login/Login';
 import { fetchMovies } from '../../actions';
 import './App.css';
 
@@ -17,8 +18,6 @@ class App extends Component {
     const movieResponse = await fetch(`https://api.themoviedb.org/3/movie/now_playing?api_key=${apiKey}`);
     const movies = await movieResponse.json();
 
-
-    //dispatch action to set the store
     this.props.handleFetch(movies.results);
   }
 
@@ -27,8 +26,18 @@ class App extends Component {
       <div className="App">
         <header className="App-header">
           <h1 className="App-title">Welcome to React</h1>
+          <Link to='/login'>
+            <button>
+              SIGN IN
+            </button>
+          </Link>
         </header>
-        <CardContainer />
+
+        <Switch>
+          <Route exact path='/' component={CardContainer} />
+          <Route path='/login' component={Login} />
+        </Switch>
+
       </div>
     );
   }
