@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { withRouter, Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { setCurrentUser } from '../../actions';
+import * as actions from '../../actions';
 
 class Login extends Component {
   constructor() {
@@ -36,11 +37,11 @@ class Login extends Component {
 
       const userInfo = await signInUser.json();
 
-      console.log(userInfo.data);
-      this.props.setCurrentUser(userInfo.data);
+      this.props.userLoginSuccess(userInfo.data);
 
     } catch (error){
       console.log('Email and password combination not found');
+      this.props.userLoginError(error);
     }
   }
 
@@ -72,6 +73,9 @@ class Login extends Component {
           <input onChange={(event) => this.handleInputChange(event, 'name')} type="text" placeholder="Name" />
           <input onChange={(event) => this.handleInputChange(event, 'email')} type="email" placeholder="email" />
           <input onChange={(event) => this.handleInputChange(event, 'password')} type="password" placeholder="password" />
+          <button onClick={this.submitNewUser}>
+            Submit
+          </button>
         </div>
       );
     };
@@ -79,6 +83,9 @@ class Login extends Component {
       <div>
         <input onChange={(event) => this.handleInputChange(event, 'email')} type="email" placeholder="email" />
         <input onChange={(event) => this.handleInputChange(event, 'password')} type="password" placeholder="password" />
+        <button onClick={this.submitLogin}>
+          Submit
+        </button>
       </div>
       );
   }
@@ -92,9 +99,30 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    setCurrentUser: (userInfo) => {
-      dispatch(setCurrentUser(userInfo));
-    }  
+    userLoginAttempt: (userInfo) => {
+      dispatch(actions.userLoginAttempt(userInfo));
+    },
+    userLoginSuccess: (userInfo) => {
+      dispatch(actions.userLoginSuccess(userInfo));
+    },
+    userLoginError: (userInfo) => {
+      dispatch(actions.userLoginError(userInfo));
+    },
+    userSignupAttempt: (userInfo) => {
+      dispatch(actions.userSignupAttempt(userInfo));
+    },
+    userSignupSuccess: (userInfo) => {
+      dispatch(actions.userLoginSuccess(userInfo));
+    },
+    userSignupError: (userInfo) => {
+      dispatch(actions.userLoginError(userInfo));
+    },
+    getCurrentUser: (userInfo) => {
+      dispatch(actions.getCurrentUser(userInfo));
+    },
+    userLogout: (userInfo) => {
+      dispatch(actions.userLogout(userInfo));
+    },
   };
 };
 
