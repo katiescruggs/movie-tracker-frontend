@@ -3,6 +3,9 @@ const userReducer = (state = {}, action) => {
     case 'SET_USER':
       console.log('set user');
       return action.user;
+    case 'CREATE_USER':
+      console.log('create user')
+      // return action.
     default: 
       return state;
   }

@@ -27,14 +27,20 @@ class App extends Component {
         <header className="App-header">
           <h1 className="App-title">MovieTracker</h1>
           <Link to='/login'>
-            <button className='btn-sign-in'>
-              SIGN IN
+            <button className='btn-log-in'>
+              Log In
             </button>
           </Link>
+          <Link to='/register'>
+            <button className='btn-sign-up'>
+              Sign Up
+            </button>
+          </Link> 
         </header>
 
 
-          <Route exact path='/login' component={Login} />
+          <Route exact path='/login'  render={props => <Login {...props} />}/>
+          <Route exact path='/register'  render={props => <Login {...props} showRegister />}/>
           <Route exact path='/' component={CardContainer} />
       </div>
     );

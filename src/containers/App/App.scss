@@ -11,18 +11,24 @@
   // display: inline-block;
 }
 
-.btn-sign-in {
+.btn-log-in {
   display: inline-block;
   position: absolute;
-  top: 42px;
+  top: 20px;
   right: 30px;
 }
 
+.btn-sign-up {
+  position: absolute;
+  top: 20px;
+  right: 100px;
+}
 .App-title {
   font-size: 1.5em;
   display: inline-block;
-
 }
+
+
 
 .App-intro {
   font-size: large;
