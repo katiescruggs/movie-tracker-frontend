@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { withRouter, Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { setCurrentUser } from '../../actions';
+import './Login.css'
 
 class Login extends Component {
   constructor() {
@@ -68,17 +69,23 @@ class Login extends Component {
   render() {
     if (this.props.showRegister) {
       return (
-        <div>
-          <input onChange={(event) => this.handleInputChange(event, 'name')} type="text" placeholder="Name" />
-          <input onChange={(event) => this.handleInputChange(event, 'email')} type="email" placeholder="email" />
-          <input onChange={(event) => this.handleInputChange(event, 'password')} type="password" placeholder="password" />
+        <div className='sign-up'>
+          <input className='input-field' onChange={(event) => this.handleInputChange(event, 'name')} type="text" placeholder="Name" />
+          <input className='input-field' onChange={(event) => this.handleInputChange(event, 'email')} type="email" placeholder="email" />
+          <input className='input-field' onChange={(event) => this.handleInputChange(event, 'password')} type="password" placeholder="password" />
+          <button onClick={this.submitLogin}>
+          Submit
+          </button>
         </div>
       );
     };
     return (
-      <div>
-        <input onChange={(event) => this.handleInputChange(event, 'email')} type="email" placeholder="email" />
-        <input onChange={(event) => this.handleInputChange(event, 'password')} type="password" placeholder="password" />
+      <div className='login'>
+        <input className='input-field' onChange={(event) => this.handleInputChange(event, 'email')} type="email" placeholder="email" />
+        <input className='input-field' onChange={(event) => this.handleInputChange(event, 'password')} type="password" placeholder="password" />
+        <button className='input-field' onClick={this.submitLogin}>
+          Submit
+        </button>
       </div>
       );
   }
