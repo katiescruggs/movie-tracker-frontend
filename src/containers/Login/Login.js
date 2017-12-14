@@ -20,19 +20,16 @@ class Login extends Component {
     this.setState({[prop]: value});
   }
 
-  submitLogin = async (event) => {
+  submitLogin = async (event, url, payload) => {
     event.preventDefault();
 
     try {
-      const signInUser = await fetch('/api/users', {
+      const signInUser = await fetch(url, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
         },
-        body: JSON.stringify({
-          email: this.state.email,
-          password: this.state.password
-        }) 
+        body: JSON.stringify(payload) 
       });
 
       const userInfo = await signInUser.json();
@@ -45,27 +42,6 @@ class Login extends Component {
     }
   }
 
-  submitNewUser = async () => {
-
-    try {
-      const createNewUser = await fetch('/api/users/new', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({
-          name: this.state.name,
-          email: this.state.email,
-          password: this.state.password
-        })
-      });
-      const newUser = await createNewUser.json();
-      // console.log(newUser)
-    } catch (error) {
-      // console.log(error)
-    }
-  }
-
   render() {
     if (this.props.showRegister) {
       return (
@@ -73,7 +49,7 @@ class Login extends Component {
           <input onChange={(event) => this.handleInputChange(event, 'name')} type="text" placeholder="Name" />
           <input onChange={(event) => this.handleInputChange(event, 'email')} type="email" placeholder="email" />
           <input onChange={(event) => this.handleInputChange(event, 'password')} type="password" placeholder="password" />
-          <button onClick={this.submitNewUser}>
+          <button onClick={(event) => this.submitLogin(event, '/api/users/new', {name: this.state.name, email: this.state.email, password: this.state.password})}>
             Submit
           </button>
         </div>
@@ -83,7 +59,7 @@ class Login extends Component {
       <div>
         <input onChange={(event) => this.handleInputChange(event, 'email')} type="email" placeholder="email" />
         <input onChange={(event) => this.handleInputChange(event, 'password')} type="password" placeholder="password" />
-        <button onClick={this.submitLogin}>
+        <button onClick={(event) => this.submitLogin(event, '/api/users', {email: this.state.email, password: this.state.password})}>
           Submit
         </button>
       </div>
