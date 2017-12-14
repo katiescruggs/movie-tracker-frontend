@@ -1,7 +1,14 @@
-export const fetchMovies = (movies) => ({
-  type: 'FETCH_MOVIES',
-  movies 
-});
+import { fetchRecentMovies } from '../helpers/apiCalls.js';
+
+export const fetchMovies = () => async (dispatch) => {
+  const movies = await fetchRecentMovies();
+  dispatch(setMovies(movies));
+}
+
+export const setMovies = (movies) => ({
+  type: 'SET_MOVIES',
+  movies  
+})
 
 export const userLoginAttempt = (user) => ({
   type: 'USER_LOGIN_ATTEMPT',

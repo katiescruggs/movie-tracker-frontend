@@ -15,10 +15,10 @@ class App extends Component {
   }
 
   async componentDidMount() {
-    const movieResponse = await fetch(`https://api.themoviedb.org/3/movie/now_playing?api_key=${apiKey}`);
-    const movies = await movieResponse.json();
+    //const movieResponse = await fetch(`https://api.themoviedb.org/3/movie/now_playing?api_key=${apiKey}`);
+    //const movies = await movieResponse.json();
 
-    this.props.handleFetch(movies.results);
+    this.props.handleFetch();
   }
 
   render() {
@@ -49,8 +49,8 @@ class App extends Component {
 
 const mapDispatchToProps = dispatch => {
   return {
-    handleFetch: (movies) => {
-      dispatch(fetchMovies(movies));
+    handleFetch: () => {
+      dispatch(fetchMovies());
     }
   };
 };
