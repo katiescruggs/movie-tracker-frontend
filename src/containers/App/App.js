@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Switch, NavLink, Link, Route } from 'react-router-dom';
+import { Switch, NavLink, Link, Route, withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 import apiKey from '../../apiKey.js';
 import CardContainer from '../CardContainer/CardContainer';
@@ -25,19 +25,18 @@ class App extends Component {
     return (
       <div className="App">
         <header className="App-header">
-          <h1 className="App-title">Welcome to React</h1>
+          <h1 className="App-title">MovieTracker</h1>
           <Link to='/login'>
-            <button>
+            <button className='btn-sign-in'>
               SIGN IN
             </button>
           </Link>
         </header>
 
-        <Switch>
-          <Route exact path='/' component={CardContainer} />
-          <Route path='/login' component={Login} />
-        </Switch>
 
+          <Route path='/login' component={Login} />
+          <Route exact path='/' component={CardContainer} />
+          <CardContainer />
       </div>
     );
   }
@@ -52,4 +51,4 @@ const mapDispatchToProps = dispatch => {
 };
 
 
-export default connect(null, mapDispatchToProps)(App);
+export default withRouter(connect(null, mapDispatchToProps)(App));
