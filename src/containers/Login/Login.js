@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { withRouter, Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { setCurrentUser } from '../../actions';
+import './Login.css'
 import * as actions from '../../actions';
 
 class Login extends Component {
