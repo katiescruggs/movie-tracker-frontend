@@ -9,6 +9,7 @@ const userReducer = (state = {signedIn: false, info: {}}, action) => {
       return {signedIn: true, info};
 
     case 'USER_LOGIN_ERROR': 
+      console.log(action);
       return state;
 
     case 'USER_SIGNUP_ATTEMPT':

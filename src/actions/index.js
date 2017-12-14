@@ -23,9 +23,9 @@ export const userSignupAttempt = (user) => ({
   user
 });
 
-export const userSignupSuccess = (user) => ({
+export const userSignupSuccess = (userId) => ({
   type: 'USER_SIGNUP_SUCCESS',
-  user
+  userId
 });
 
 export const userSignupError = (user) => ({

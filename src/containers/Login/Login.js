@@ -21,7 +21,10 @@ class Login extends Component {
   }
 
   submitLogin = async (event, url, payload) => {
+    console.log('submit login firing')
     event.preventDefault();
+
+    const createUser = url === '/api/users/new';
 
     try {
       const signInUser = await fetch(url, {
@@ -33,12 +36,20 @@ class Login extends Component {
       });
 
       const userInfo = await signInUser.json();
-
-      this.props.userLoginSuccess(userInfo.data);
+      console.log(userInfo)
+      if(createUser) {
+        this.props.userSignupSuccess(userInfo.data);
+      } else {
+        this.props.userLoginSuccess(userInfo.data);
+      }
 
     } catch (error){
       console.log('Email and password combination not found');
-      this.props.userLoginError(error);
+      if(createUser) {
+        this.props.userLoginError('Log in failed'); 
+      } else {
+        this.props.userSignupError('Sign up failed');
+      }
     }
   }
 
