@@ -34,9 +34,8 @@ class App extends Component {
         </header>
 
 
-          <Route path='/login' component={Login} />
+          <Route exact path='/login' component={Login} />
           <Route exact path='/' component={CardContainer} />
-          <CardContainer />
       </div>
     );
   }
