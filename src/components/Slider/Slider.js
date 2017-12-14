@@ -2,14 +2,14 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import React from 'react';
 import Slick from 'react-slick';
-import './Slider.css'
+import './Slider.css';
 
 class Slider extends React.Component {
   render() {
     var settings = {
       dots: true,
       infinite: true,
-      speed: 500,
+      speed: 800,
       slidesToShow: 1,
       slidesToScroll: 1
     };
@@ -27,4 +27,4 @@ class Slider extends React.Component {
   }
 }
 
-export default Slider
+export default Slider;
