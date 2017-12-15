@@ -133,6 +133,6 @@ Login.propTypes = {
   userLogout: PropTypes.func
 };
 
-export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Login));
+export default connect(mapStateToProps, mapDispatchToProps)(Login);
 
 

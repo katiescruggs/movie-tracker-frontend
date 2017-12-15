@@ -3,6 +3,11 @@ import apiKey from '../apiKey.js';
 export const fetchRecentMovies = async () => {
   try {
     const movieResponse = await fetch(`https://api.themoviedb.org/3/movie/now_playing?api_key=${apiKey}`);
+    
+    //debugger;
+    //movieResponse.ok
+
+
     const movies = await movieResponse.json();
     return movies.results;
 
