@@ -42,8 +42,6 @@ export const postCreateUser = async (userPayload) => {
       body: JSON.stringify(userPayload)
     });
 
-    console.log(postUser);
-
     const newUser = await postUser.json();
     return newUser.id;
   } catch (error) {

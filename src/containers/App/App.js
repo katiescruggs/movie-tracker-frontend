@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
-import { Switch, NavLink, Link, Route, withRouter } from 'react-router-dom';
+import { Link, Route, withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
-import apiKey from '../../apiKey.js';
 import CardContainer from '../CardContainer/CardContainer';
 import Login from '../Login/Login';
 import { fetchMovies } from '../../actions';
+import PropTypes from 'prop-types';
 import './App.css';
 
 class App extends Component {
@@ -19,10 +19,12 @@ class App extends Component {
   }
 
   render() {
+    const name = this.props.name ? `${this.props.name}'s` : '';
+
     return (
       <div className="App">
         <header className="App-header">
-          <h1 className="App-title">MovieTracker</h1>
+          <h1 className="App-title">{`${name} MovieTracker`}</h1>
           <Link to='/login'>
             <button className='btn-log-in'>
               Log In
@@ -35,14 +37,25 @@ class App extends Component {
           </Link> 
         </header>
 
-
-          <Route exact path='/login'  render={props => <Login {...props} />}/>
-          <Route exact path='/register'  render={props => <Login {...props} showRegister />}/>
-          <Route exact path='/' component={CardContainer} />
+        <Route 
+          exact path='/login'  
+          render={props => <Login {...props} />}
+        />
+        <Route 
+          exact path='/register'  
+          render={props => <Login {...props} showRegister />}
+        />
+        <Route exact path='/' component={CardContainer} />
       </div>
     );
   }
 }
+
+const mapStateToProps = state => {
+  return {
+    name: state.user.info.name
+  };
+};
 
 const mapDispatchToProps = dispatch => {
   return {
@@ -52,5 +65,9 @@ const mapDispatchToProps = dispatch => {
   };
 };
 
+App.propTypes = {
+  name: PropTypes.string,
+  handleFetch: PropTypes.func
+};
 
-export default withRouter(connect(null, mapDispatchToProps)(App));
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(App));

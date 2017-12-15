@@ -17,9 +17,8 @@ const userReducer = (state = {signedIn: false, info: {}}, action) => {
       console.log(action);
       return state;
 
-    case 'GET_CURRENT_USER':
-      console.log(action);
-      return state;
+    case 'SET_CURRENT_USER':
+      return {signedIn: true, info: action.user};
 
     case 'USER_LOGOUT':
       console.log(action);
