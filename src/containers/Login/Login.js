@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import { withRouter, Redirect } from 'react-router-dom';
+import { withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
-import { setCurrentUser } from '../../actions';
-import './Login.css'
+import PropTypes from 'prop-types';
+import './Login.css';
 import * as actions from '../../actions';
 
 class Login extends Component {
@@ -21,13 +21,13 @@ class Login extends Component {
     this.setState({[name]: value});
   }
 
-  submitLogin = async (payload) => {
-    if(this.props.showRegister) {
-      this.props.userSignupAttempt(payload);
+  submitLogin = async (userInputs) => {
+    if (this.props.showRegister) {
+      this.props.userSignupAttempt(userInputs);
     } else {
-      this.props.userLoginAttempt(payload);
+      this.props.userLoginAttempt(userInputs);
     }
-    this.setState({name: '', email: '', password: ''})
+    this.setState({name: '', email: '', password: ''});
   }
 
   render() {
@@ -64,13 +64,14 @@ class Login extends Component {
           />
           <button 
             className='btn-submit'
-            onClick={(event) => this.submitLogin({name, email, password})}
+            onClick={() => this.submitLogin({name, email, password})}
           >
             Submit
           </button>
         </div>
       );
-    };
+    }
+
     return (
       <div className='login'>
         <input 
@@ -89,11 +90,14 @@ class Login extends Component {
           value={password}
           onChange={this.handleInputChange} 
         />
-        <button className='btn-submit' onClick={(event) => this.submitLogin({email, password})}>
+        <button 
+          className='btn-submit' 
+          onClick={() => this.submitLogin({email, password})}
+        >
           Submit
         </button>
       </div>
-      );
+    );
   }
 }
 
@@ -116,8 +120,17 @@ const mapDispatchToProps = dispatch => {
     },
     userLogout: (userInfo) => {
       dispatch(actions.userLogout(userInfo));
-    },
+    }
   };
+};
+
+Login.propTypes = {
+  name: PropTypes.string,
+  showRegister: PropTypes.bool,
+  userLoginAttempt: PropTypes.func,
+  userSignupAttempt: PropTypes.func,
+  getCurrentUser: PropTypes.func,
+  userLogout: PropTypes.func
 };
 
 export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Login));
