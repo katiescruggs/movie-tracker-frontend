@@ -30,18 +30,27 @@ export const userSignupAttempt = (userPayload) => async (dispatch) => {
   dispatch(userSignupSuccess(newUserResponse));
 };
 
-export const userSignupSuccess = (userId) => ({
-  type: 'USER_SIGNUP_SUCCESS',
-  userId
-});
+export const userSignupSuccess = (userId) => async (dispatch) => {
+  dispatch(getCurrentUser(userId));
+};
 
 export const userSignupError = (user) => ({
   type: 'USER_SIGNUP_ERROR',
   user
 });
 
-export const getCurrentUser = (user) => ({
-  type: 'GET_CURRENT_USER',
+export const getCurrentUser = (id) => async () => {
+  const allUsersResponse = await fetch('/api/users/');
+  const allUsersJson = await allUsersResponse.json();
+  const allUsers = allUsersJson.data;
+
+  const currentUser = allUsers.find(user => user.id === id);
+  
+  console.log(currentUser);
+};
+
+export const setCurrentUser = (user) => ({
+  type: 'SET_CURRENT_USER',
   user
 });
 
