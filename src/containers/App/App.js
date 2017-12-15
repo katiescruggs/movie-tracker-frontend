@@ -19,10 +19,13 @@ class App extends Component {
   }
 
   render() {
+    const name = this.props.name ? `${this.props.name}'s` : '';
+    console.log(name);
+
     return (
       <div className="App">
         <header className="App-header">
-          <h1 className="App-title">MovieTracker</h1>
+          <h1 className="App-title">{`${name} MovieTracker`}</h1>
           <Link to='/login'>
             <button className='btn-log-in'>
               Log In
@@ -44,6 +47,12 @@ class App extends Component {
   }
 }
 
+const mapStateToProps = state => {
+  return {
+    name: state.user.info.name
+  }
+}
+
 const mapDispatchToProps = dispatch => {
   return {
     handleFetch: () => {
@@ -53,4 +62,4 @@ const mapDispatchToProps = dispatch => {
 };
 
 
-export default withRouter(connect(null, mapDispatchToProps)(App));
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(App));
