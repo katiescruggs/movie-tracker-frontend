@@ -16,9 +16,9 @@ class Login extends Component {
     };
   }
 
-  handleInputChange(event, prop) {
-    const value = event.target.value;
-    this.setState({[prop]: value});
+  handleInputChange = (event) => {
+    const {name, value} = event.target;
+    this.setState({[name]: value});
   }
 
   submitLogin = async (payload) => {
@@ -27,19 +27,45 @@ class Login extends Component {
     } else {
       this.props.userLoginAttempt(payload);
     }
+    this.setState({name: '', email: '', password: ''})
   }
 
   render() {
     const {name, email, password} = this.state;
 
-
     if (this.props.showRegister) {
       return (
         <div className='login'>
-          <input className='input-field' onChange={(event) => this.handleInputChange(event, 'name')} type="text" placeholder="Name" />
-          <input className='input-field'onChange={(event) => this.handleInputChange(event, 'email')} type="email" placeholder="email" />
-          <input className='input-field'onChange={(event) => this.handleInputChange(event, 'password')} type="password" placeholder="password" />
-          <button className='btn-submit'onClick={(event) => this.submitLogin({name, email, password})}>
+          <input 
+            className='input-field' 
+            type="text" 
+            placeholder="Name"
+            name="name"
+            value={name}
+            onChange={this.handleInputChange} 
+          />
+
+          <input 
+            className='input-field'
+            type="email" 
+            placeholder="email"
+            name="email"
+            value={email}
+            onChange={this.handleInputChange} 
+          />
+
+          <input 
+            className='input-field' 
+            type="password" 
+            placeholder="password"
+            name="password"
+            value={password}
+            onChange={this.handleInputChange} 
+          />
+          <button 
+            className='btn-submit'
+            onClick={(event) => this.submitLogin({name, email, password})}
+          >
             Submit
           </button>
         </div>
@@ -47,8 +73,22 @@ class Login extends Component {
     };
     return (
       <div className='login'>
-        <input className='input-field' onChange={(event) => this.handleInputChange(event, 'email')} type="email" placeholder="email" />
-        <input className='input-field' onChange={(event) => this.handleInputChange(event, 'password')} type="password" placeholder="password" />
+        <input 
+          className='input-field' 
+          type="email"
+          name="email"
+          placeholder="email"
+          value={email}
+          onChange={this.handleInputChange} 
+        />
+        <input 
+          className='input-field' 
+          type="password" 
+          placeholder="password"
+          name="password"
+          value={password}
+          onChange={this.handleInputChange} 
+        />
         <button className='btn-submit' onClick={(event) => this.submitLogin({email, password})}>
           Submit
         </button>
@@ -59,7 +99,7 @@ class Login extends Component {
 
 const mapStateToProps = state => {
   return {
-
+    name: state.user.info.name
   };
 };
 
@@ -80,6 +120,6 @@ const mapDispatchToProps = dispatch => {
   };
 };
 
-export default withRouter(connect(null, mapDispatchToProps)(Login));
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Login));
 
 
