@@ -1,0 +1,9 @@
+.card-container {
+  background-image: url('../../Assets/movie-background.jpg');
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  // overflow-y: hidden;
+  overflow-x: scroll;
+  height: 500px;
+}
