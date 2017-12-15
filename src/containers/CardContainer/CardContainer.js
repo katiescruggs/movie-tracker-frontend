@@ -3,7 +3,6 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import Card from '../../components/Card/Card';
 import './CardContainer.css';
-import Slider from '../../components/Slider/Slider';
 
 export const CardContainer = ({movies}) => {
   const cards = movies.map((movie) => {
@@ -15,7 +14,6 @@ export const CardContainer = ({movies}) => {
 
   return (
     <div>
-      <Slider />
       {cards}
     </div>
   );
