@@ -13,7 +13,7 @@ export const CardContainer = ({movies}) => {
   });
 
   return (
-    <div>
+    <div className='card-container'>
       {cards}
     </div>
   );
