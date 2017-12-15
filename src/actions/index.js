@@ -39,14 +39,14 @@ export const userSignupError = (user) => ({
   user
 });
 
-export const getCurrentUser = (id) => async () => {
+export const getCurrentUser = (id) => async dispatch => {
   const allUsersResponse = await fetch('/api/users/');
   const allUsersJson = await allUsersResponse.json();
   const allUsers = allUsersJson.data;
 
   const currentUser = allUsers.find(user => user.id === id);
   
-  console.log(currentUser);
+  dispatch(setCurrentUser(currentUser));
 };
 
 export const setCurrentUser = (user) => ({
