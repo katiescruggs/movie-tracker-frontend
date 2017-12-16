@@ -28,7 +28,11 @@ class Login extends Component {
       this.props.userLoginAttempt(userInputs);
     }
     this.setState({name: '', email: '', password: ''});
-    this.props.history.push('/');
+
+    // console.log(this.props.signedIn);
+    // if(this.props.signedIn) {
+    //   this.props.history.push('/');
+    // }
   }
 
 
@@ -47,10 +51,11 @@ class Login extends Component {
             />
       : null;
 
-      //const errorMessage = 
+      const errorMessage = this.props.errorStatus ? this.props.errorMessage : null;
 
       return (
         <div className='login'>
+          {errorMessage}
           {nameInput}
 
           <input 
@@ -83,7 +88,9 @@ class Login extends Component {
 
 const mapStateToProps = state => {
   return {
-    name: state.user.info.name
+    name: state.user.info.name,
+    errorStatus: state.error.status,
+    errorMessage: state.error.message,
   };
 };
 

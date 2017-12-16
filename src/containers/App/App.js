@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Route } from 'react-router-dom';
 import Header from '../Header/Header.js';
 import PropTypes from 'prop-types';
 import Routes from '../../components/Routes/Routes.js';
@@ -8,13 +9,11 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <Header />
+        <Route path = "/" component={ Header } />
         <Routes />
       </div>
     );
   }
 }
 
-
-//export default withRouter(connect(mapStateToProps, mapDispatchToProps)(App));
 export default App;

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, browserHistory } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { fetchMovies } from '../../actions';
 
@@ -10,22 +10,39 @@ class Header extends Component {
      this.props.handleFetch();
    }
 
+   componentWillUpdate(nextProps) {
+    if(nextProps.signedIn && !this.props.signedIn) {
+      this.props.history.push('/');
+    }
+   }
+
   render() {
     const name = this.props.name ? `${this.props.name}'s` : '';
+
+    const buttons = this.props.signedIn 
+      ? <Link to='/login'>
+          <button className='btn-log-in'>
+            Log Out
+          </button>
+        </Link>
+
+      : <div>
+          <Link to='/login'>
+            <button className='btn-log-in'>
+              Log In
+            </button>
+          </Link>
+          <Link to='/register'>
+            <button className='btn-sign-up'>
+              Sign Up
+            </button>
+          </Link>
+        </div> 
 
     return (
       <header className="App-header">
         <h1 className="App-title">{`${name} MovieTracker`}</h1>
-        <Link to='/login'>
-          <button className='btn-log-in'>
-            Log In
-          </button>
-        </Link>
-        <Link to='/register'>
-          <button className='btn-sign-up'>
-            Sign Up
-          </button>
-        </Link> 
+        {buttons}
       </header>
     );
   }
@@ -33,7 +50,8 @@ class Header extends Component {
 
 const mapStateToProps = state => {
   return {
-    name: state.user.info.name
+    name: state.user.info.name,
+    signedIn: state.user.signedIn
   };
 };
 

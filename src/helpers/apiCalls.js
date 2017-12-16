@@ -27,14 +27,14 @@ export const postLogin = async (userPayload) => {
     });
 
     if(fetchUser.status >= 400) {
+      return null;
+    } else {
       const user = await fetchUser.json();
       return user.data;
-    } else {
-      return null;
     }
 
   } catch (error) {
-    alert('Email/password not found');
+    return null;
   }
 };
 
@@ -52,7 +52,7 @@ export const postCreateUser = async (userPayload) => {
     const newUser = await postUser.json();
     return newUser.id;
   } catch (error) {
-    alert('Failed to create user');
+    return null;
   }
 };
 

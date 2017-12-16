@@ -2,18 +2,14 @@ const userReducer = (state = {signedIn: false, info: {}}, action) => {
   switch(action.type) {
 
     case 'USER_LOGIN_SUCCESS':
+      console.log('login success');
       const info = action.userInfo;
       return {signedIn: true, info};
 
-    case 'USER_LOGIN_ERROR': 
-      console.log(action);
+    case 'USER_LOGIN_ERROR':
       return state;
 
     case 'USER_SIGNUP_SUCCESS':
-      console.log(action);
-      return state;
-
-    case 'USER_SIGNUP_ERROR':
       console.log(action);
       return state;
 
