@@ -13,10 +13,8 @@ export const setMovies = (movies) => ({
 export const userLoginAttempt = (userPayload) => async (dispatch) => {
   const userResponse = await postLogin(userPayload);
   if(userResponse === null) {
-    console.log('error')
     dispatch(userLoginError());
   } else {
-    console.log('success')
     dispatch(userLoginSuccess(userResponse));
   }
 };
@@ -33,7 +31,12 @@ export const userLoginError = () => ({
 
 export const userSignupAttempt = (userPayload) => async (dispatch) => {
   const newUserResponse = await postCreateUser(userPayload);
-  dispatch(userSignupSuccess(newUserResponse));
+
+  if(newUserResponse === null) {
+    dispatch(userSignupError()); 
+  } else {
+    dispatch(userSignupSuccess(newUserResponse));
+  }
 };
 
 export const userSignupSuccess = (userId) => async (dispatch) => {
@@ -42,7 +45,7 @@ export const userSignupSuccess = (userId) => async (dispatch) => {
 
 export const userSignupError = (user) => ({
   type: 'USER_SIGNUP_ERROR',
-  user
+  errorMessage: 'SIGN UP ERROR'
 });
 
 export const getCurrentUser = (id) => async dispatch => {
@@ -63,3 +66,20 @@ export const setCurrentUser = (user) => ({
 export const userLogout = () => ({
   type: 'USER_LOGOUT'
 });
+
+export const addFavorite = () => ({
+  type: 'ADD_FAVORITE'
+});
+
+export const removeFavorite = () => ({
+  type: 'REMOVE_FAVORITE'
+});
+
+export const getFavorites = () => ({
+
+});
+
+export const setFavorites = () => ({
+
+});
+

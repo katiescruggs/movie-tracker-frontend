@@ -48,9 +48,12 @@ export const postCreateUser = async (userPayload) => {
       },
       body: JSON.stringify(userPayload)
     });
-
-    const newUser = await postUser.json();
-    return newUser.id;
+    if(postUser.status >= 400) {
+      return null;
+    } else {
+      const newUser = await postUser.json();
+      return newUser.id;
+    }
   } catch (error) {
     return null;
   }
