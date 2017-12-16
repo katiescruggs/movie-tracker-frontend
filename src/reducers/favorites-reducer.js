@@ -2,8 +2,9 @@ const favoritesReducer = (state = [], action) => {
   console.log(action.type);
   switch(action.type) {
     case 'SET_FAVORITES':
-      console.log(action.favorites);
       return action.favorites;
+    case 'CLEAR_FAVORITES':
+      return [];
     default:
       return state;
   }

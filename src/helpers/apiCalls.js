@@ -62,8 +62,17 @@ export const getCurrentUser = async () => {
 
 };
 
-export const addFavorite = async (userId, movie) => {
-  const addFavPayload = Object.assign({}, {user_id: userId}, movie);
+export const postAddFavorite = async (userId, movie) => {
+  const addFavPayload = {
+    movie_id: movie.id,
+    user_id: userId,
+    title: movie.title,
+    poster_path: movie.poster_path,
+    release_date: movie.release_date,
+    vote_average: movie.vote_average,
+    overview: movie.overview
+  };
+  console.log(addFavPayload)
   try {
     const addFavResponse = await fetch('/api/users/favorites/new', {
       method: 'POST', 
@@ -79,7 +88,7 @@ export const addFavorite = async (userId, movie) => {
   }
 }
 
-export const removeFavorite = async (userId, movieId) => {
+export const postRemoveFavorite = async (userId, movieId) => {
   const removeFavPayload = {user_id: userId, movie_id: movieId};
   try {
     const removeFavResponse = await fetch(`/api/users/${userId}/favorites/${movieId}`, {
@@ -89,6 +98,8 @@ export const removeFavorite = async (userId, movieId) => {
       },
       body: JSON.stringify(removeFavPayload)
     });
+    const removeFav = await removeFavResponse.json();
+    return removeFav;
   } catch (error) {
     return null;
   }

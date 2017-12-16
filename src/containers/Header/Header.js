@@ -19,6 +19,16 @@ class Header extends Component {
   render() {
     const name = this.props.name ? `${this.props.name}'s` : '';
 
+    const favoritesButton = this.props.signedIn 
+      ? <Link to="/favorites">
+          <button
+            className="btn-favorites"
+          >
+            Favorites
+          </button>
+        </Link>
+      : null;
+
     const buttons = this.props.signedIn 
       ? <button 
           className='btn-log-in'
@@ -42,6 +52,7 @@ class Header extends Component {
 
     return (
       <header className="App-header">
+        {favoritesButton}
         <h1 className="App-title">{`${name} MovieTracker`}</h1>
         {buttons}
       </header>

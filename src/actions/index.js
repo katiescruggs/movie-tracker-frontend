@@ -1,4 +1,4 @@
-import { fetchRecentMovies, postLogin, postCreateUser, fetchFavorites } from '../helpers/apiCalls.js';
+import { fetchRecentMovies, postLogin, postCreateUser, fetchFavorites, postAddFavorite, postRemoveFavorite } from '../helpers/apiCalls.js';
 
 export const fetchMovies = () => async (dispatch) => {
   const movies = await fetchRecentMovies();
@@ -68,16 +68,17 @@ export const userLogout = () => ({
   type: 'USER_LOGOUT'
 });
 
-export const addFavorite = () => ({
-  type: 'ADD_FAVORITE'
-});
+export const addFavorite = (userId, movie) => async (dispatch) => {
+  const favId = await postAddFavorite(userId, movie);
+  dispatch(getFavorites(userId));
+};
 
-export const removeFavorite = () => ({
-  type: 'REMOVE_FAVORITE'
-});
+export const removeFavorite = (userId, favId) => async (dispatch) => {
+  const removeFav = await postRemoveFavorite(userId, favId);
+  dispatch(getFavorites(userId));
+};
 
 export const getFavorites = (userId) => async (dispatch) => {
-  console.log('getFavorites action')
   const favorites = await fetchFavorites(userId);
   dispatch(setFavorites(favorites.data));
 };
@@ -85,5 +86,9 @@ export const getFavorites = (userId) => async (dispatch) => {
 export const setFavorites = (favorites) => ({
   type: 'SET_FAVORITES',
   favorites
+});
+
+export const clearFavorites = () => ({
+  type: 'CLEAR_FAVORITES'
 });
 
