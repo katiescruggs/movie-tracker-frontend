@@ -15,8 +15,9 @@ const Card = ({movie}) => {
   );
 };
 
-export default Card;
-
 Card.propTypes = {
   movie: PropTypes.object
 };
+
+export default Card;
+

@@ -14,7 +14,7 @@ const Routes = () => {
           exact path='/register'  
           render={props => <Login {...props} showRegister />}
         />
-        <Route exact path='/' component={CardContainer} />
+        <Route path='/' component={CardContainer} />
     </div>
   );
 }
