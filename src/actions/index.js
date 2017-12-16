@@ -79,6 +79,7 @@ export const addFavorite = (userId, movie) => async (dispatch) => {
 };
 
 export const removeFavorite = (userId, movieId) => async (dispatch) => {
+  console.log('removeFav')
   const removeFav = await postRemoveFavorite(userId, movieId);
   dispatch(getFavorites(userId));
 };

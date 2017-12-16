@@ -4,8 +4,11 @@ import PropTypes from 'prop-types';
 import Card from '../../components/Card/Card';
 import './CardContainer.css';
 
-export const CardContainer = ({movies}) => {
-  const cards = movies.map((movie) => {
+export const CardContainer = ({movies, favorites, location}) => {
+  const path = location.pathname;
+  const displayArray = path === '/favorites' ? favorites : movies;
+  
+  const cards = displayArray.map((movie) => {
     return <Card
       key={movie.id}
       movie={movie} 
@@ -20,7 +23,10 @@ export const CardContainer = ({movies}) => {
 };
 
 const mapStateToProps = state => {
-  return {movies: state.movies};
+  return {
+    movies: state.movies,
+    favorites: state.favorites
+  };
 };
 
 CardContainer.propTypes = {

@@ -30,12 +30,14 @@ class Header extends Component {
       : null;
 
     const buttons = this.props.signedIn 
-      ? <button 
-          className='btn-log-in'
-          onClick={this.props.handleLogout}
-        >
-          Log Out
-        </button>
+      ? <Link to='/'>
+          <button 
+            className='btn-log-in'
+            onClick={this.props.handleLogout}
+          >
+            Log Out
+          </button>
+        </Link>
 
       : <div>
           <Link to='/login'>

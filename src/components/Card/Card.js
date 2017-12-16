@@ -8,7 +8,10 @@ const Card = ({userId, addFav, removeFav, movie, favorites}) => {
   const favoriteClick = () => {
     const isFav = favorites.find(fav => (fav.title === movie.title));
     console.log('favClick: ', isFav)
-    isFav ? removeFav(userId, movie.id) : addFav(userId, movie)
+
+    const movieId = isFav ? movie.movie_id : movie.id;
+
+    isFav ? removeFav(userId, movieId) : addFav(userId, movie)
   };
 
   const {title, poster_path, release_date, vote_average, overview} = movie;
