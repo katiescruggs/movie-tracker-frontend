@@ -12,7 +12,11 @@ export const setMovies = (movies) => ({
 
 export const userLoginAttempt = (userPayload) => async (dispatch) => {
   const userResponse = await postLogin(userPayload);
-  dispatch(userLoginSuccess(userResponse));
+  if(userResponse === null) {
+    dispatch(userLoginSuccess(userResponse));
+  } else {
+    dispatch(userLoginError);
+  }
 };
 
 export const userLoginSuccess = (userInfo) => ({
@@ -22,7 +26,7 @@ export const userLoginSuccess = (userInfo) => ({
 
 export const userLoginError = (user) => ({
   type: 'USER_LOGIN_ERROR',
-  user
+  errorMessage: 'Login failed, please check your email and password';
 });
 
 export const userSignupAttempt = (userPayload) => async (dispatch) => {
