@@ -28,11 +28,6 @@ class Login extends Component {
       this.props.userLoginAttempt(userInputs);
     }
     this.setState({name: '', email: '', password: ''});
-
-    // console.log(this.props.signedIn);
-    // if(this.props.signedIn) {
-    //   this.props.history.push('/');
-    // }
   }
 
 

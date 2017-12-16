@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Link, browserHistory } from 'react-router-dom';
 import { connect } from 'react-redux';
-import { fetchMovies } from '../../actions';
+import { fetchMovies, userLogout } from '../../actions';
 
 
 class Header extends Component {
@@ -20,11 +20,12 @@ class Header extends Component {
     const name = this.props.name ? `${this.props.name}'s` : '';
 
     const buttons = this.props.signedIn 
-      ? <Link to='/login'>
-          <button className='btn-log-in'>
-            Log Out
-          </button>
-        </Link>
+      ? <button 
+          className='btn-log-in'
+          onClick={this.props.handleLogout}
+        >
+          Log Out
+        </button>
 
       : <div>
           <Link to='/login'>
@@ -57,6 +58,9 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
+    handleLogout: () => {
+      dispatch(userLogout());
+    },
     handleFetch: () => {
       dispatch(fetchMovies());
     }

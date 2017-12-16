@@ -17,8 +17,8 @@ const userReducer = (state = {signedIn: false, info: {}}, action) => {
       return {signedIn: true, info: action.user};
 
     case 'USER_LOGOUT':
-      console.log(action);
-      return state;
+      console.log('logout');
+      return {signedIn: false, info: {}};
 
     default: 
       return state;

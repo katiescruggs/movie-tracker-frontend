@@ -60,7 +60,6 @@ export const setCurrentUser = (user) => ({
   user
 });
 
-export const userLogout = (user) => ({
-  type: 'USER_LOGOUT',
-  user
+export const userLogout = () => ({
+  type: 'USER_LOGOUT'
 });
