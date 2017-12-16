@@ -1,4 +1,4 @@
-import { fetchRecentMovies, postLogin, postCreateUser } from '../helpers/apiCalls.js';
+import { fetchRecentMovies, postLogin, postCreateUser, fetchFavorites } from '../helpers/apiCalls.js';
 
 export const fetchMovies = () => async (dispatch) => {
   const movies = await fetchRecentMovies();
@@ -11,11 +11,12 @@ export const setMovies = (movies) => ({
 });
 
 export const userLoginAttempt = (userPayload) => async (dispatch) => {
-  const userResponse = await postLogin(userPayload);
-  if(userResponse === null) {
+  const user = await postLogin(userPayload);
+  if(user === null) {
     dispatch(userLoginError());
   } else {
-    dispatch(userLoginSuccess(userResponse));
+    dispatch(userLoginSuccess(user));
+    dispatch(getFavorites(user.id))
   }
 };
 
@@ -75,11 +76,14 @@ export const removeFavorite = () => ({
   type: 'REMOVE_FAVORITE'
 });
 
-export const getFavorites = () => ({
+export const getFavorites = (userId) => async (dispatch) => {
+  console.log('getFavorites action')
+  const favorites = await fetchFavorites(userId);
+  dispatch(setFavorites(favorites.data));
+};
 
-});
-
-export const setFavorites = () => ({
-
+export const setFavorites = (favorites) => ({
+  type: 'SET_FAVORITES',
+  favorites
 });
 
