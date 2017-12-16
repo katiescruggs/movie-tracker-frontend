@@ -64,6 +64,11 @@ export const setCurrentUser = (user) => ({
   user
 });
 
+export const logout = () => (dispatch) => {
+  dispatch(userLogout());
+  dispatch(clearFavorites());
+}
+
 export const userLogout = () => ({
   type: 'USER_LOGOUT'
 });
@@ -73,8 +78,8 @@ export const addFavorite = (userId, movie) => async (dispatch) => {
   dispatch(getFavorites(userId));
 };
 
-export const removeFavorite = (userId, favId) => async (dispatch) => {
-  const removeFav = await postRemoveFavorite(userId, favId);
+export const removeFavorite = (userId, movieId) => async (dispatch) => {
+  const removeFav = await postRemoveFavorite(userId, movieId);
   dispatch(getFavorites(userId));
 };
 

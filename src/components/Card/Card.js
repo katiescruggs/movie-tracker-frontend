@@ -4,9 +4,13 @@ import * as actions from '../../actions';
 import { connect } from 'react-redux';
 import './Card.css'
 
-const Card = ({userId, addFav, movie}) => {
-  //const favoriteClick = () => this.props.addFav(this.props.userId, movie);
-  console.log(userId)
+const Card = ({userId, addFav, removeFav, movie, favorites}) => {
+  const favoriteClick = () => {
+    const isFav = favorites.find(fav => (fav.title === movie.title));
+    console.log('favClick: ', isFav)
+    isFav ? removeFav(userId, movie.id) : addFav(userId, movie)
+  };
+
   const {title, poster_path, release_date, vote_average, overview} = movie;
 
   return (
@@ -16,7 +20,7 @@ const Card = ({userId, addFav, movie}) => {
       <p>{release_date}</p>
       <p>{vote_average}</p>
       <p>{overview}</p>
-      <button onClick={() => addFav(userId, movie)}>
+      <button onClick={favoriteClick}>
         Favorite
       </button>
     </div>
@@ -28,7 +32,8 @@ Card.propTypes = {
 };
 
 const mapStateToProps = state => ({
-  userId: state.user.info.id
+  userId: state.user.info.id,
+  favorites: state.favorites
 });
 
 const mapDispatchToProps = dispatch => {

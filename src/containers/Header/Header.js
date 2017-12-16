@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Link, browserHistory } from 'react-router-dom';
 import { connect } from 'react-redux';
-import { fetchMovies, userLogout } from '../../actions';
+import { fetchMovies, logout } from '../../actions';
 
 
 class Header extends Component {
@@ -70,7 +70,7 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
   return {
     handleLogout: () => {
-      dispatch(userLogout());
+      dispatch(logout());
     },
     handleFetch: () => {
       dispatch(fetchMovies());
