@@ -17,7 +17,8 @@ export const CardContainer = ({movies, favorites, location}) => {
 
   return (
     <div className='card-container'>
-      {cards}
+    {cards}
+    
     </div>
   );
 };
