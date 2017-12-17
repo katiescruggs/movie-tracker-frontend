@@ -22,7 +22,7 @@ export const CardContainer = ({movies, favorites, location}) => {
   );
 };
 
-const mapStateToProps = state => {
+export const mapStateToProps = state => {
   return {
     movies: state.movies,
     favorites: state.favorites
