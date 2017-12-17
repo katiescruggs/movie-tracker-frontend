@@ -24,9 +24,9 @@ describe('all actions', () => {
     it('has a type of userSignUpError', () => {
       const expected = {
       type: 'USER_SIGNUP_ERROR',
-      userInfo
+      errorMessage: 'SIGN UP ERROR'
       }
-      expect(actions.userSignUpError(userInfo)).toEqual(expected)
+      expect(actions.userSignUpError()).toEqual(expected)
     })
 
     it('should dispatch a sign up success or error', () => {

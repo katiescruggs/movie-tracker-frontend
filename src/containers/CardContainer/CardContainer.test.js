@@ -6,7 +6,7 @@ import CardContainer from './CardContainer'
 describe('CardContainer tests', () => {
   let CardContainer;
   beforeEach( () => {
-    CardContainer = shallow(<Provider><CardContainer /></Provider>)
+    CardContainer = shallow(<Provider ><CardContainer /></Provider>)
   })
 
   it('should be defined', () => {

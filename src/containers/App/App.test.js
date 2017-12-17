@@ -3,10 +3,10 @@ import ReactDOM from 'react-dom';
 import { shallow } from 'enzyme';
 import App from './App';
 
-// it('renders without crashing', () => {
-//   const div = document.createElement('div');
-//   ReactDOM.render(<Provider><App /></Provider>, div);
-// });
+it('renders without crashing', () => {
+  const div = document.createElement('div');
+  ReactDOM.render(<Provider><App /></Provider>, div);
+});
 
 describe('App tests', () => {
   let app;
