@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import * as actions from '../../actions';
 import { connect } from 'react-redux';
+import StarIcon from 'react-icons/lib/fa/star'
 import './Card.css'
 
 const Card = ({userId, addFav, removeFav, movie, favorites}) => {
@@ -32,8 +33,8 @@ const Card = ({userId, addFav, removeFav, movie, favorites}) => {
       </div>
 
     </div>
-      <button onClick={favoriteClick}>
-            Favorite
+      <button onClick={favoriteClick} className='btn-favorite'>
+            FAVORITE <StarIcon className='star-icon'/>
           </button>
     </div>
   );
