@@ -1,8 +1,8 @@
 import { combineReducers } from 'redux'
-import moviesReducer from './movies-reducer.js';
-import userReducer from './user-reducer.js';
-import errorReducer from './error-reducer.js';
-import favoritesReducer from './favorites-reducer.js';
+import moviesReducer from './moviesReducer.js';
+import userReducer from './userReducer.js';
+import errorReducer from './errorReducer.js';
+import favoritesReducer from './favoritesReducer.js';
 
 
 const rootReducer = combineReducers({

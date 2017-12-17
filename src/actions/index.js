@@ -95,6 +95,6 @@ export const setFavorites = (favorites) => ({
 });
 
 export const clearFavorites = () => ({
-  type: 'CLEAR_FAVORITES'
+  type: 'CLEAR_FAVORITES',
 });
 
