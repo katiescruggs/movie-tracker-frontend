@@ -12,4 +12,6 @@ describe('Card tests', () => {
   it('should exist', () => {
     expect(card).toBeDefined()
   })
+
+  
 })

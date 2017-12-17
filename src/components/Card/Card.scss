@@ -1,9 +1,50 @@
 .card  {
   img {
-    width: 200px;
+    width: 300px;
   }
+  // background: white;
+  margin: 50px;
+  perspective: 1000px;
+}
+
+
+.card:hover .flipper,
+.card.hover .flipper {
+  transform: rotateY(180deg);
+}
+
+.card,
+.front,
+.back {
+  height: 450px;
+  width: 300px;
+}
+
+.flipper {
+  transition: 1s;
+  transform-style: preserve-3d;
+  position: relative;
+  transform-origin: 150px 100%;
+}
+
+.front, 
+.back {
+  backface-visibility: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.front {
+  z-index: 2;
+  transform: rotateY(0deg);
+}
+
+.back {
+  & p {
+      padding: 0px 25px;
+  }
+
+  transform: rotateY(180deg);
   background: white;
-  margin: 0 100px;
-  height: 500px;
-  width: 200px;
 }

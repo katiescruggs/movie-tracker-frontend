@@ -3,7 +3,6 @@
   background-position: center;
   background-size: cover;
   display: flex;
-  // overflow-y: hidden;
   overflow-x: scroll;
-  height: 500px;
+  height: calc(100vh - 80px);
 }

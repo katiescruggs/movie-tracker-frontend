@@ -17,15 +17,24 @@ const Card = ({userId, addFav, removeFav, movie, favorites}) => {
   const {title, poster_path, release_date, vote_average, overview} = movie;
 
   return (
+    <div>
     <div className='card'>
-      <h3>{title}</h3>
-      <img src={`https://image.tmdb.org/t/p/w500${poster_path}`} />
-      <p>{release_date}</p>
-      <p>{vote_average}</p>
-      <p>{overview}</p>
+      <div className='flipper'>
+        <div className='front'>
+          <img src={`https://image.tmdb.org/t/p/w500${poster_path}`} />
+        </div>
+        <div className='back'>
+          <h3>{title}</h3>
+          <p>{release_date}</p>
+          <p>{vote_average}</p>
+          <p>{overview}</p>
+        </div>
+      </div>
+
+    </div>
       <button onClick={favoriteClick}>
-        Favorite
-      </button>
+            Favorite
+          </button>
     </div>
   );
 };
