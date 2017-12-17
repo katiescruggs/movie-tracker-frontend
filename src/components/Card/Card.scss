@@ -56,11 +56,31 @@
 
 }
 
+.back .card-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: left;
+}
+
 .btn-card-favorite {
+  border: none;
   font-size: 16pt;
-  padding: 8px;
-  border-radius: 15px;
+  padding: 10px;
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  outline: none;
+}
+
+.btn-card-favorite:hover {
+  color: #FFE9A8;
+  cursor: pointer;
+}
+
+.fav {
+  color: #ffcf40;
 }
 
 .star-icon {
+  margin: 0 0 5px 10px;
 }

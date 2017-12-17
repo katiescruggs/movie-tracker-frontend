@@ -7,10 +7,10 @@ import './CardContainer.css';
 export const CardContainer = ({movies, favorites, location}) => {
   const path = location.pathname;
   const displayArray = path === '/favorites' ? favorites : movies;
-  console.log(location)
   
   const cards = displayArray.map((movie) => {
     return <Card
+      path={location.pathname}
       key={movie.id}
       movie={movie} 
     />;

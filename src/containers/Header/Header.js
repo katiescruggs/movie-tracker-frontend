@@ -17,8 +17,6 @@ class Header extends Component {
    }
 
   render() {
-    const name = this.props.name ? `${this.props.name}'s` : '';
-
     const favoritesButton = this.props.signedIn 
       ? <Link to="/favorites">
           <button
@@ -30,14 +28,17 @@ class Header extends Component {
       : null;
 
     const buttons = this.props.signedIn 
-      ? <Link to='/'>
-          <button 
-            className='btn-log-in'
-            onClick={this.props.handleLogout}
-          >
-            Log Out
-          </button>
-        </Link>
+      ? <div className="welcome-msg"> 
+          <p className="btn-log-in">{`Welcome, ${this.props.name}`}</p>
+          <Link to='/'>
+            <button 
+              className='btn-sign-up'
+              onClick={this.props.handleLogout}
+            >
+              Log Out
+            </button>
+          </Link>
+        </div>
 
       : <div>
           <Link to='/login'>
@@ -55,7 +56,9 @@ class Header extends Component {
     return (
       <header className="App-header">
         {favoritesButton}
-        <h1 className="App-title">{`${name} MovieTracker`}</h1>
+        <Link to="/">
+          <h1 className="App-title">MovieTracker</h1>
+        </Link>
         {buttons}
       </header>
     );

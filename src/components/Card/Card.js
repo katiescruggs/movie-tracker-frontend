@@ -5,21 +5,20 @@ import { connect } from 'react-redux';
 import StarIcon from 'react-icons/lib/fa/star'
 import './Card.css'
 
-const Card = ({userId, addFav, removeFav, movie, favorites}) => {
+const Card = ({userId, addFav, removeFav, movie, favorites, path}) => {
+  const isFav = favorites.find(fav => (fav.title === movie.title));
+  
   const favoriteClick = () => {
-    const isFav = favorites.find(fav => (fav.title === movie.title));
-    console.log('favClick: ', isFav)
-
-    const movieId = isFav ? movie.movie_id : movie.id;
-
-    isFav ? removeFav(userId, movieId) : addFav(userId, movie)
+    const movieId = path === '/favorites' ? movie.movie_id : movie.id;
+    isFav ? removeFav(userId, movieId) : addFav(userId, movie);
   };
 
   const {title, poster_path, release_date, vote_average, overview} = movie;
+  const buttonClass = isFav ? 'btn-card-favorite fav' : 'btn-card-favorite';
 
   return (
     <div>
-    <div className='card'>
+    <div className="card">
       <div className='flipper'>
         <div className='front'>
           <img src={`https://image.tmdb.org/t/p/w500${poster_path}`} />
@@ -29,17 +28,21 @@ const Card = ({userId, addFav, removeFav, movie, favorites}) => {
             <h3>{title}</h3>
           </header>
           <div className='card-body'>
-            <p>{release_date}</p>
-            <p>{vote_average}</p>
-            <p>{overview}</p>
+            <p>{`Release Date: ${release_date}`}</p>
+            <p>{`Vote Average: ${vote_average}`}</p>
+            <p>{`Overview: ${overview}`}</p>
           </div>
         </div>
       </div>
 
     </div>
-      <button onClick={favoriteClick} className='btn-card-favorite'>
-            FAVORITE <StarIcon className='star-icon'/>
-          </button>
+      <button 
+        onClick={favoriteClick} 
+        className={buttonClass}
+        >
+          FAVORITE 
+          <StarIcon className='star-icon'/>
+        </button>
     </div>
   );
 };

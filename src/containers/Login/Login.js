@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { browserHistory } from 'react-router-dom';
+import { Link, browserHistory } from 'react-router-dom';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import './Login.css';
@@ -53,6 +53,9 @@ class Login extends Component {
       return (
         <div className='login'>
             <h3 className='modal-title'>{modalTitle}</h3>
+              <Link to="/">
+                <button className="close-btn">x</button>
+              </Link>
             {errorMessage}
             {nameInput}
             <input 
