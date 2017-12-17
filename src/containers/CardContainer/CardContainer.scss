@@ -3,7 +3,24 @@
   background-position: center;
   background-size: cover;
   display: flex;
-  // overflow-y: hidden;
   overflow-x: scroll;
-  height: 500px;
+  height: calc(100vh - 100px);
+}
+
+.card-container::-webkit-scrollbar-track
+{
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+  // background-color: #43465c;
+}
+
+.card-container::-webkit-scrollbar
+{
+  width: 6px;
+  // background-color: #43465c;
+}
+
+.card-container::-webkit-scrollbar-thumb
+{
+  background-color: #B22628;
+  border-radius: 20px;
 }
