@@ -18,7 +18,6 @@ export const fetchRecentMovies = async () => {
 
 export const postLogin = async (userPayload) => {
   try {
-    console.log('trying to postLogin')
     const fetchUser = await fetch('/api/users/', {
       method: 'POST', 
       headers: {
@@ -27,16 +26,19 @@ export const postLogin = async (userPayload) => {
       body: JSON.stringify(userPayload)
     });
 
-    const user = await fetchUser.json();
-    return user.data;
+    if(fetchUser.status >= 400) {
+      return null;
+    } else {
+      const user = await fetchUser.json();
+      return user.data;
+    }
 
   } catch (error) {
-    alert('Email/password not found');
+    return null;
   }
 };
 
 export const postCreateUser = async (userPayload) => {
-  console.log(userPayload)
   try {
     console.log('trying to postcreateuser')
     const postUser = await fetch('/api/users/new', {
@@ -50,7 +52,7 @@ export const postCreateUser = async (userPayload) => {
     const newUser = await postUser.json();
     return newUser.id;
   } catch (error) {
-    alert('Failed to create user');
+    return null;
   }
 };
 

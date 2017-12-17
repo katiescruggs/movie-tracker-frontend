@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { withRouter } from 'react-router-dom';
+import { browserHistory } from 'react-router-dom';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import './Login.css';
@@ -30,20 +30,28 @@ class Login extends Component {
     this.setState({name: '', email: '', password: ''});
   }
 
+
   render() {
     const {name, email, password} = this.state;
 
-    if (this.props.showRegister) {
+    const userInputs = this.props.showRegister ? {name, email, password} : {email, password};
+    const nameInput = this.props.showRegister 
+      ? <input 
+              className='input-field' 
+              type="text" 
+              placeholder="Name"
+              name="name"
+              value={name}
+              onChange={this.handleInputChange} 
+            />
+      : null;
+
+      const errorMessage = this.props.errorStatus ? this.props.errorMessage : null;
+
       return (
         <div className='login'>
-          <input 
-            className='input-field' 
-            type="text" 
-            placeholder="Name"
-            name="name"
-            value={name}
-            onChange={this.handleInputChange} 
-          />
+          {errorMessage}
+          {nameInput}
 
           <input 
             className='input-field'
@@ -64,46 +72,20 @@ class Login extends Component {
           />
           <button 
             className='btn-submit'
-            onClick={() => this.submitLogin({name, email, password})}
+            onClick={() => this.submitLogin(userInputs)}
           >
             Submit
           </button>
         </div>
       );
     }
-
-    return (
-      <div className='login'>
-        <input 
-          className='input-field' 
-          type="email"
-          name="email"
-          placeholder="email"
-          value={email}
-          onChange={this.handleInputChange} 
-        />
-        <input 
-          className='input-field' 
-          type="password" 
-          placeholder="password"
-          name="password"
-          value={password}
-          onChange={this.handleInputChange} 
-        />
-        <button 
-          className='btn-submit' 
-          onClick={() => this.submitLogin({email, password})}
-        >
-          Submit
-        </button>
-      </div>
-    );
-  }
 }
 
 const mapStateToProps = state => {
   return {
-    name: state.user.info.name
+    name: state.user.info.name,
+    errorStatus: state.error.status,
+    errorMessage: state.error.message,
   };
 };
 

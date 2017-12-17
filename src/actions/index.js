@@ -12,7 +12,13 @@ export const setMovies = (movies) => ({
 
 export const userLoginAttempt = (userPayload) => async (dispatch) => {
   const userResponse = await postLogin(userPayload);
-  dispatch(userLoginSuccess(userResponse));
+  if(userResponse === null) {
+    console.log('error')
+    dispatch(userLoginError());
+  } else {
+    console.log('success')
+    dispatch(userLoginSuccess(userResponse));
+  }
 };
 
 export const userLoginSuccess = (userInfo) => ({
@@ -20,9 +26,9 @@ export const userLoginSuccess = (userInfo) => ({
   userInfo
 });
 
-export const userLoginError = (user) => ({
+export const userLoginError = () => ({
   type: 'USER_LOGIN_ERROR',
-  user
+  errorMessage: 'Login failed, please check your email and password'
 });
 
 export const userSignupAttempt = (userPayload) => async (dispatch) => {
@@ -54,7 +60,6 @@ export const setCurrentUser = (user) => ({
   user
 });
 
-export const userLogout = (user) => ({
-  type: 'USER_LOGOUT',
-  user
+export const userLogout = () => ({
+  type: 'USER_LOGOUT'
 });
