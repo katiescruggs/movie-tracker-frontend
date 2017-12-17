@@ -6,12 +6,10 @@
 
 .App {
   text-align: center;
-
 }
 
-
 .App-header {
-  background-color: #222;
+  background-color: #B22628;
   height: 100px;
   padding: 20px;
   color: white;
@@ -21,23 +19,49 @@
 .btn-log-in {
   display: inline-block;
   position: absolute;
-  top: 20px;
-  right: 30px;
+  top: 5px;
+  right: 85px;
+  background: none;
+  border: none;
+  font-size: 13pt;
+  outline: none;
 }
 
 .btn-sign-up {
   position: absolute;
-  top: 20px;
-  right: 100px;
+  top: 5px;
+  right: 5px;
+  background: none;
+  border: none;
+  font-size: 13pt;
+  outline: none;
 }
+
+.btn-header-favorite {
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  background: none;
+  border: none;
+  font-size: 13pt;
+  outline: none;
+}
+
+.btn-sign-up,
+.btn-log-in,
+.btn-header-favorite {
+  &:hover {
+    cursor: pointer;
+    color: white;
+  }
+}
+
 .App-title {
   font-size: 50pt;
   display: inline-block;
   font-family: 'CanterBold3D';
   letter-spacing: .4em;
 }
-
-
 
 .App-intro {
   font-size: large;

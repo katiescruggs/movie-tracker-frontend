@@ -25,15 +25,19 @@ const Card = ({userId, addFav, removeFav, movie, favorites}) => {
           <img src={`https://image.tmdb.org/t/p/w500${poster_path}`} />
         </div>
         <div className='back'>
-          <h3>{title}</h3>
-          <p>{release_date}</p>
-          <p>{vote_average}</p>
-          <p>{overview}</p>
+          <header>
+            <h3>{title}</h3>
+          </header>
+          <div className='card-body'>
+            <p>{release_date}</p>
+            <p>{vote_average}</p>
+            <p>{overview}</p>
+          </div>
         </div>
       </div>
 
     </div>
-      <button onClick={favoriteClick} className='btn-favorite'>
+      <button onClick={favoriteClick} className='btn-card-favorite'>
             FAVORITE <StarIcon className='star-icon'/>
           </button>
     </div>

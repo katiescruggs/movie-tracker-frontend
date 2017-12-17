@@ -42,14 +42,21 @@
 
 .back {
   & p {
+      margin: 5px 0;
       padding: 0px 25px;
   }
-
+& header {
+  background: #43465c;
+  padding: 20px;
+  font-size: 16pt;
+  color: #fff;
+}
   transform: rotateY(180deg);
-  background: white;
+  background: #DEDEDE;
+
 }
 
-.btn-favorite {
+.btn-card-favorite {
   font-size: 16pt;
   padding: 8px;
   border-radius: 15px;

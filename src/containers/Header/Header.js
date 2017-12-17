@@ -22,7 +22,7 @@ class Header extends Component {
     const favoritesButton = this.props.signedIn 
       ? <Link to="/favorites">
           <button
-            className="btn-favorites"
+            className="btn-header-favorite"
           >
             Favorites
           </button>

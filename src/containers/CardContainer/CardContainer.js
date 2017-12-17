@@ -7,6 +7,7 @@ import './CardContainer.css';
 export const CardContainer = ({movies, favorites, location}) => {
   const path = location.pathname;
   const displayArray = path === '/favorites' ? favorites : movies;
+  console.log(location)
   
   const cards = displayArray.map((movie) => {
     return <Card
@@ -18,7 +19,7 @@ export const CardContainer = ({movies, favorites, location}) => {
   return (
     <div className='card-container'>
     {cards}
-    
+
     </div>
   );
 };
