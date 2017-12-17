@@ -56,10 +56,21 @@
 
 }
 
+.back .card-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: left;
+}
+
 .btn-card-favorite {
   font-size: 16pt;
   padding: 8px;
   border-radius: 15px;
+}
+
+.fav {
+  border: 10px solid magenta;
 }
 
 .star-icon {
