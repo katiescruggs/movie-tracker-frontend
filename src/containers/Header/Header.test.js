@@ -1,16 +1,16 @@
 import React from 'react'
 import { shallow } from 'enzyme'
 import { Provider } from 'react-redux'
-import Login from './Login'
+import Header from './Header'
 
-describe('Login tests', () => {
-  let login;
+describe('Header tests', () => {
+  let header;
   beforeEach( () => {
-    login = shallow(<Provider ><Login /></Provider>)
+    header = shallow(<Provider ><Header /></Provider>)
   })
 
   it('should exist', () => {
-    expect(login).toBeDefined()
+    expect(header).toBeDefined()
   })
   
 })
