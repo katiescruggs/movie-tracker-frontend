@@ -34,6 +34,8 @@ class Login extends Component {
   render() {
     const {name, email, password} = this.state;
 
+    const modalTitle = this.props.showRegister ? 'Sign Up' : 'Login';
+
     const userInputs = this.props.showRegister ? {name, email, password} : {email, password};
     const nameInput = this.props.showRegister 
       ? <input 
@@ -50,36 +52,35 @@ class Login extends Component {
 
       return (
         <div className='login'>
-          <Link to="/">
-            <button className="close-btn">x</button>
-          </Link>
-          {errorMessage}
-          {nameInput}
+            <h3 className='modal-title'>{modalTitle}</h3>
+              <Link to="/">
+                <button className="close-btn">x</button>
+              </Link>
+            {errorMessage}
+            {nameInput}
+            <input 
+              className='input-field'
+              type="email" 
+              placeholder="Email"
+              name="email"
+              value={email}
+              onChange={this.handleInputChange} 
+            />
 
-          
-          <input 
-            className='input-field'
-            type="email" 
-            placeholder="email"
-            name="email"
-            value={email}
-            onChange={this.handleInputChange} 
-          />
-
-          <input 
-            className='input-field' 
-            type="password" 
-            placeholder="password"
-            name="password"
-            value={password}
-            onChange={this.handleInputChange} 
-          />
-          <button 
-            className='btn-submit'
-            onClick={() => this.submitLogin(userInputs)}
-          >
-            Submit
-          </button>
+            <input 
+              className='input-field' 
+              type="password" 
+              placeholder="Password"
+              name="password"
+              value={password}
+              onChange={this.handleInputChange} 
+            />
+            <button 
+              className='btn-submit'
+              onClick={() => this.submitLogin(userInputs)}
+            >
+              Submit
+            </button>
         </div>
       );
     }
