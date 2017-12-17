@@ -1,5 +1,5 @@
 .film-reel-container {
-  animation: Show 6s;
+  animation: Show 6.2s;
   visibility: hidden;
 }
 
@@ -17,6 +17,6 @@ iframe {
     visibility: visible;
   }
   100% {
-    visibility: visible;
+    visibility: hidden;
   }
 }
