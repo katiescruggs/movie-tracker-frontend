@@ -1,5 +1,4 @@
 const errorReducer = (state = {}, action) => {
-    console.log(action.type)
   switch(action.type) {
     case 'USER_LOGIN_ERROR':
       console.log('error reducer login error');

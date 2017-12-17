@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Link, browserHistory } from 'react-router-dom';
 import { connect } from 'react-redux';
-import { fetchMovies, userLogout } from '../../actions';
+import { fetchMovies, logout } from '../../actions';
 
 
 class Header extends Component {
@@ -19,13 +19,25 @@ class Header extends Component {
   render() {
     const name = this.props.name ? `${this.props.name}'s` : '';
 
+    const favoritesButton = this.props.signedIn 
+      ? <Link to="/favorites">
+          <button
+            className="btn-favorites"
+          >
+            Favorites
+          </button>
+        </Link>
+      : null;
+
     const buttons = this.props.signedIn 
-      ? <button 
-          className='btn-log-in'
-          onClick={this.props.handleLogout}
-        >
-          Log Out
-        </button>
+      ? <Link to='/'>
+          <button 
+            className='btn-log-in'
+            onClick={this.props.handleLogout}
+          >
+            Log Out
+          </button>
+        </Link>
 
       : <div>
           <Link to='/login'>
@@ -42,6 +54,7 @@ class Header extends Component {
 
     return (
       <header className="App-header">
+        {favoritesButton}
         <h1 className="App-title">{`${name} MovieTracker`}</h1>
         {buttons}
       </header>
@@ -59,7 +72,7 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
   return {
     handleLogout: () => {
-      dispatch(userLogout());
+      dispatch(logout());
     },
     handleFetch: () => {
       dispatch(fetchMovies());

@@ -1,4 +1,4 @@
-import { fetchRecentMovies, postLogin, postCreateUser } from '../helpers/apiCalls.js';
+import { fetchRecentMovies, postLogin, postCreateUser, fetchFavorites, postAddFavorite, postRemoveFavorite } from '../helpers/apiCalls.js';
 
 export const fetchMovies = () => async (dispatch) => {
   const movies = await fetchRecentMovies();
@@ -11,13 +11,12 @@ export const setMovies = (movies) => ({
 });
 
 export const userLoginAttempt = (userPayload) => async (dispatch) => {
-  const userResponse = await postLogin(userPayload);
-  if(userResponse === null) {
-    console.log('error')
+  const user = await postLogin(userPayload);
+  if(user === null) {
     dispatch(userLoginError());
   } else {
-    console.log('success')
-    dispatch(userLoginSuccess(userResponse));
+    dispatch(userLoginSuccess(user));
+    dispatch(getFavorites(user.id))
   }
 };
 
@@ -33,7 +32,12 @@ export const userLoginError = () => ({
 
 export const userSignupAttempt = (userPayload) => async (dispatch) => {
   const newUserResponse = await postCreateUser(userPayload);
-  dispatch(userSignupSuccess(newUserResponse));
+
+  if(newUserResponse === null) {
+    dispatch(userSignupError()); 
+  } else {
+    dispatch(userSignupSuccess(newUserResponse));
+  }
 };
 
 export const userSignupSuccess = (userId) => async (dispatch) => {
@@ -42,7 +46,7 @@ export const userSignupSuccess = (userId) => async (dispatch) => {
 
 export const userSignupError = (user) => ({
   type: 'USER_SIGNUP_ERROR',
-  user
+  errorMessage: 'SIGN UP ERROR'
 });
 
 export const getCurrentUser = (id) => async dispatch => {
@@ -60,6 +64,37 @@ export const setCurrentUser = (user) => ({
   user
 });
 
+export const logout = () => (dispatch) => {
+  dispatch(userLogout());
+  dispatch(clearFavorites());
+}
+
 export const userLogout = () => ({
   type: 'USER_LOGOUT'
 });
+
+export const addFavorite = (userId, movie) => async (dispatch) => {
+  const favId = await postAddFavorite(userId, movie);
+  dispatch(getFavorites(userId));
+};
+
+export const removeFavorite = (userId, movieId) => async (dispatch) => {
+  console.log('removeFav')
+  const removeFav = await postRemoveFavorite(userId, movieId);
+  dispatch(getFavorites(userId));
+};
+
+export const getFavorites = (userId) => async (dispatch) => {
+  const favorites = await fetchFavorites(userId);
+  dispatch(setFavorites(favorites.data));
+};
+
+export const setFavorites = (favorites) => ({
+  type: 'SET_FAVORITES',
+  favorites
+});
+
+export const clearFavorites = () => ({
+  type: 'CLEAR_FAVORITES'
+});
+
