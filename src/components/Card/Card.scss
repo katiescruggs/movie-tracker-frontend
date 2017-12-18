@@ -1,10 +1,13 @@
 .card  {
   img {
+    height: 450px;
     width: 300px;
   }
   // background: white;
-  margin: 50px;
+  margin: 70px 30px 0;
   perspective: 1000px;
+  // overflow: hidden;
+
 }
 
 
@@ -33,6 +36,7 @@
   position: absolute;
   top: 0;
   left: 0;
+  box-shadow: 0px 0px 5px 2px rgba(255,207,90,0.6);
 }
 
 .front {
@@ -42,25 +46,32 @@
 
 .back {
   & p {
-      margin: 5px 0;
+      margin: 10px 0;
       padding: 0px 25px;
   }
 & header {
-  background: #43465c;
+  background-image: url('../../Assets/stage-lights.jpg');
+  background-position: center;
   padding: 20px;
   font-size: 16pt;
   color: #fff;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
   transform: rotateY(180deg);
   background: #DEDEDE;
 
 }
+.vote, .release-date {
+  font-weight: 700;
+}
 
 .back .card-body {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
   text-align: left;
+  overflow: scroll;
+  height: 350px;
 }
 
 .btn-card-favorite {
@@ -81,6 +92,6 @@
   color: #ffcf40;
 }
 
-.star-icon {
+.video-icon {
   margin: 0 0 5px 10px;
 }
