@@ -6,36 +6,50 @@ describe('all actions', () => {
     beforeEach( () => {
       userInfo = {id: 1, name: 'Yung Jhun', email: 'Jhun@gmail.com', password: 'password'}
     });
-    it('has a type of USER_LOGIN_SUCCESS', () => {
+
+    it('userLoginSuccess returns an obj with type of USER_LOGIN_SUCCESS', () => {
       const expected = {
         type: 'USER_LOGIN_SUCCESS',
         userInfo
       };
-      expect(actions.userLoginSuccess(userInfo)).toEqual(expected)
+      expect(actions.userLoginSuccess(userInfo)).toEqual(expected);
     });
 
-    it('has a type of USER_LOGIN_ERROR', () => {
+    it('userLoginError returns an obj with type of USER_LOGIN_ERROR', () => {
       const expected = {
         type: 'USER_LOGIN_ERROR',
         userInfo
       };
     });
 
-    it('has a type of userSignUpError', () => {
+    it('userSignupError returns an obj with type of USER_SIGNUP_ERROR', () => {
       const expected = {
       type: 'USER_SIGNUP_ERROR',
       errorMessage: 'SIGN UP ERROR'
       };
-      expect(actions.userSignUpError()).toEqual(expected);
+      expect(actions.userSignupError()).toEqual(expected);
     });
 
-    it('should dispatch a sign up success or error', () => {
+    it('setCurrentUser returns an obj with type of SET_CURRENT_USER', () => {
+      const user = userInfo;
+      const expected = {
+        type: 'SET_CURRENT_USER',
+        user
+      };
 
+      expect(actions.setCurrentUser(user)).toEqual(expected);
+    });
+
+    it('userLogout returns an obj with type of USER_LOGOUT', () => {
+      const expected = {
+        type: 'USER_LOGOUT'
+      };
+      expect(actions.userLogout()).toEqual(expected);
     });
   });
 
   describe('movie actions', () => {
-    it('has a type of SET_MOVIES', () => {
+    it('setMovies returns an obj with type of SET_MOVIES', () => {
       const movies = [{ title: 'Casper' }, { title: 'Thor' }, { title: 'Batman' }]
       const expected = {
         type: 'SET_MOVIES',
@@ -46,7 +60,7 @@ describe('all actions', () => {
   });
 
   describe('favorite actions', () => {
-    it('should have a type of SET_FAVORITES', () => {
+    it('setFavorites returns an obj  with type of SET_FAVORITES', () => {
       const favorites = [{ title: 'Casper' }, { title: 'Thor' }, { title: 'Batman' }];
       const expected = {
         type: 'SET_FAVORITES',
@@ -54,21 +68,12 @@ describe('all actions', () => {
       };
     });
 
-    it('should have a type of CLEAR_FAVORITES', () => {
+    it('clearFavorites returns an obj with type of CLEAR_FAVORITES', () => {
       const favorites = [{ title: 'Casper' }, { title: 'Thor' }, { title: 'Batman' }];
       const expected = {
         type: 'CLEAR_FAVORITES',
         favorites
       };
-    });
-
-
-    it('should add favorites', () => {
-
-    });
-
-    it('should remove favorites', () => {
-
     });
   });
 });
