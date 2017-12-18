@@ -33,7 +33,7 @@ export const userLoginSuccess = (userInfo) => ({
 
 export const userLoginError = () => ({
   type: 'USER_LOGIN_ERROR',
-  errorMessage: 'Login failed, please check your email and password'
+  errorMessage: 'Login failed, please try again.'
 });
 
 export const userSignupAttempt = (userPayload) => async (dispatch) => {
@@ -52,7 +52,7 @@ export const userSignupSuccess = (userId) => async (dispatch) => {
 
 export const userSignupError = () => ({
   type: 'USER_SIGNUP_ERROR',
-  errorMessage: 'SIGN UP ERROR'
+  errorMessage: 'Sign up failed, please try again.'
 });
 
 export const getCurrentUser = (id) => async dispatch => {
