@@ -3,11 +3,8 @@
     height: 450px;
     width: 300px;
   }
-  // background: white;
   margin: 70px 30px 0;
   perspective: 1000px;
-  // overflow: hidden;
-
 }
 
 
@@ -64,8 +61,10 @@
   background: #DEDEDE;
 
 }
-.vote, .release-date {
+.vote, .release-date, .overview {
   font-weight: 700;
+  margin-right: 4px;
+  color: #1c285b;
 }
 
 .back .card-body {
@@ -94,4 +93,8 @@
 
 .video-icon {
   margin: 0 0 5px 10px;
+}
+
+.card-wrapper {
+  text-align: center;
 }
