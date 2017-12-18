@@ -81,7 +81,7 @@ ShallowWrapper {
                                         </p>
                                         <p>
                                                   <span
-                                                            className="vote"
+                                                            className="overview"
                                                   >
                                                             Overview:
                                                   </span>
@@ -101,6 +101,7 @@ ShallowWrapper {
           />
 </button>,
       ],
+      "className": "card-wrapper",
     },
     "ref": null,
     "rendered": Array [
@@ -148,7 +149,7 @@ ShallowWrapper {
                                     </p>
                                     <p>
                                                 <span
-                                                            className="vote"
+                                                            className="overview"
                                                 >
                                                             Overview:
                                                 </span>
@@ -202,7 +203,7 @@ ShallowWrapper {
                                 </p>
                                 <p>
                                                 <span
-                                                                className="vote"
+                                                                className="overview"
                                                 >
                                                                 Overview:
                                                 </span>
@@ -271,7 +272,7 @@ ShallowWrapper {
                     </p>
                     <p>
                                         <span
-                                                            className="vote"
+                                                            className="overview"
                                         >
                                                             Overview:
                                         </span>
@@ -330,7 +331,7 @@ ShallowWrapper {
 </p>,
                       <p>
                         <span
-                                                className="vote"
+                                                className="overview"
                         >
                                                 Overview:
                         </span>
@@ -412,7 +413,7 @@ ShallowWrapper {
                       "props": Object {
                         "children": Array [
                           <span
-                            className="vote"
+                            className="overview"
 >
                             Overview:
 </span>,
@@ -427,7 +428,7 @@ ShallowWrapper {
                           "nodeType": "host",
                           "props": Object {
                             "children": "Overview:",
-                            "className": "vote",
+                            "className": "overview",
                           },
                           "ref": null,
                           "rendered": "Overview:",
@@ -531,7 +532,7 @@ ShallowWrapper {
                                                 </p>
                                                 <p>
                                                             <span
-                                                                        className="vote"
+                                                                        className="overview"
                                                             >
                                                                         Overview:
                                                             </span>
@@ -551,6 +552,7 @@ ShallowWrapper {
             />
 </button>,
         ],
+        "className": "card-wrapper",
       },
       "ref": null,
       "rendered": Array [
@@ -598,7 +600,7 @@ ShallowWrapper {
                                           </p>
                                           <p>
                                                         <span
-                                                                      className="vote"
+                                                                      className="overview"
                                                         >
                                                                       Overview:
                                                         </span>
@@ -652,7 +654,7 @@ ShallowWrapper {
                                     </p>
                                     <p>
                                                       <span
-                                                                        className="vote"
+                                                                        className="overview"
                                                       >
                                                                         Overview:
                                                       </span>
@@ -721,7 +723,7 @@ ShallowWrapper {
                       </p>
                       <p>
                                             <span
-                                                                  className="vote"
+                                                                  className="overview"
                                             >
                                                                   Overview:
                                             </span>
@@ -780,7 +782,7 @@ ShallowWrapper {
 </p>,
                         <p>
                           <span
-                                                    className="vote"
+                                                    className="overview"
                           >
                                                     Overview:
                           </span>
@@ -862,7 +864,7 @@ ShallowWrapper {
                         "props": Object {
                           "children": Array [
                             <span
-                              className="vote"
+                              className="overview"
 >
                               Overview:
 </span>,
@@ -877,7 +879,7 @@ ShallowWrapper {
                             "nodeType": "host",
                             "props": Object {
                               "children": "Overview:",
-                              "className": "vote",
+                              "className": "overview",
                             },
                             "ref": null,
                             "rendered": "Overview:",
