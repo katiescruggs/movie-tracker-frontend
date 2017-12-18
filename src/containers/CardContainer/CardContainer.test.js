@@ -1,6 +1,5 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import { Provider } from 'react-redux';
 import { CardContainer, mapStateToProps } from './CardContainer';
 
 describe('CardContainer tests', () => {
