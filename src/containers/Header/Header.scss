@@ -9,26 +9,28 @@
 }
 
 .btn-log-in {
-  display: inline-block;
-  position: absolute;
-  top: 5px;
-  right: 85px;
-  background: none;
+  background: rgba(0, 0, 0, .1);
   border: none;
-  color: #1c285b;
+  color: #fff;
+  display: inline-block;
   font-size: 13pt;
   outline: none;
+  padding: 3px;
+  position: absolute;
+  right: 85px;
+  top: 5px;
 }
 
 .btn-sign-up {
-  position: absolute;
-  top: 5px;
-  right: 5px;
-  background: none;
+  background: #fff;
   border: none;
+  color: #B22628;
   font-size: 13pt;
   outline: none;
-  color: #1c285b;
+  padding: 3px;
+  position: absolute;
+  right: 5px;
+  top: 5px;
 }
 
 .btn-header-favorite {
@@ -47,8 +49,16 @@
 .btn-header-favorite {
   &:hover {
     cursor: pointer;
-    color: white;
+    font-size: 14pt;
   }
+}
+
+.favorite-icon {
+  &:hover {
+    font-size: 26pt;
+  }
+  font-size: 24pt;
+  color: #ffcf40;
 }
 
 .App-title {

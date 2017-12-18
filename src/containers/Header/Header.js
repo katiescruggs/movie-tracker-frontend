@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { fetchMovies, logout } from '../../actions';
+import VideoCamera from 'react-icons/lib/fa/video-camera';
 import propTypes from 'prop-types';
 import './Header.css';
 
@@ -22,7 +23,7 @@ export class Header extends Component {
         <button
           className="btn-header-favorite"
         >
-          Favorites
+          <VideoCamera className='favorite-icon'/>
         </button>       
       </Link>
       : null;
