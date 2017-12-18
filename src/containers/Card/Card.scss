@@ -1,0 +1,97 @@
+.card  {
+  img {
+    height: 450px;
+    width: 300px;
+  }
+  // background: white;
+  margin: 70px 30px 0;
+  perspective: 1000px;
+  // overflow: hidden;
+
+}
+
+
+.card:hover .flipper,
+.card.hover .flipper {
+  transform: rotateY(180deg);
+}
+
+.card,
+.front,
+.back {
+  height: 450px;
+  width: 300px;
+}
+
+.flipper {
+  transition: 1s;
+  transform-style: preserve-3d;
+  position: relative;
+  transform-origin: 150px 100%;
+}
+
+.front, 
+.back {
+  backface-visibility: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+  box-shadow: 0px 0px 5px 2px rgba(255,207,90,0.6);
+}
+
+.front {
+  z-index: 2;
+  transform: rotateY(0deg);
+}
+
+.back {
+  & p {
+      margin: 10px 0;
+      padding: 0px 25px;
+  }
+& header {
+  background-image: url('../../Assets/stage-lights.jpg');
+  background-position: center;
+  padding: 20px;
+  font-size: 16pt;
+  color: #fff;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+  transform: rotateY(180deg);
+  background: #DEDEDE;
+
+}
+.vote, .release-date {
+  font-weight: 700;
+}
+
+.back .card-body {
+  text-align: left;
+  overflow: scroll;
+  height: 350px;
+}
+
+.btn-card-favorite {
+  border: none;
+  font-size: 16pt;
+  padding: 10px;
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  outline: none;
+}
+
+.btn-card-favorite:hover {
+  color: #FFE9A8;
+  cursor: pointer;
+}
+
+.fav {
+  color: #ffcf40;
+}
+
+.video-icon {
+  margin: 0 0 5px 10px;
+}

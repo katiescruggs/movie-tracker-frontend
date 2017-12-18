@@ -1,0 +1,944 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Card tests Card should match the snapshot 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <Unknown
+    addFav={[Function]}
+    favorites={
+        Array [
+            "array",
+            "of",
+            "favorites",
+          ]
+    }
+    movie={
+        Object {
+            "overview": "overview",
+            "poster_path": ".asdf",
+            "release_date": "date",
+            "title": "title",
+            "vote_average": "2",
+          }
+    }
+    path="/favorites"
+    removeFav={[Function]}
+    userId={1}
+/>,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": Array [
+        <div
+          className="card"
+>
+          <div
+                    className="flipper"
+          >
+                    <div
+                              className="front"
+                    >
+                              <img
+                                        src="https://image.tmdb.org/t/p/w500.asdf"
+                              />
+                    </div>
+                    <div
+                              className="back"
+                    >
+                              <header>
+                                        <h3>
+                                                  title
+                                        </h3>
+                              </header>
+                              <div
+                                        className="card-body"
+                              >
+                                        <p>
+                                                  <span
+                                                            className="release-date"
+                                                  >
+                                                            Release Date:
+                                                  </span>
+                                                  date
+                                        </p>
+                                        <p>
+                                                  <span
+                                                            className="vote"
+                                                  >
+                                                            Vote Average:
+                                                  </span>
+                                                  2
+                                        </p>
+                                        <p>
+                                                  <span
+                                                            className="vote"
+                                                  >
+                                                            Overview:
+                                                  </span>
+                                                  overview
+                                        </p>
+                              </div>
+                    </div>
+          </div>
+</div>,
+        <button
+          className="btn-card-favorite"
+          onClick={[Function]}
+>
+          FAVORITE
+          <FaVideoCamera
+                    className="video-icon"
+          />
+</button>,
+      ],
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": <div
+            className="flipper"
+>
+            <div
+                        className="front"
+            >
+                        <img
+                                    src="https://image.tmdb.org/t/p/w500.asdf"
+                        />
+            </div>
+            <div
+                        className="back"
+            >
+                        <header>
+                                    <h3>
+                                                title
+                                    </h3>
+                        </header>
+                        <div
+                                    className="card-body"
+                        >
+                                    <p>
+                                                <span
+                                                            className="release-date"
+                                                >
+                                                            Release Date:
+                                                </span>
+                                                date
+                                    </p>
+                                    <p>
+                                                <span
+                                                            className="vote"
+                                                >
+                                                            Vote Average:
+                                                </span>
+                                                2
+                                    </p>
+                                    <p>
+                                                <span
+                                                            className="vote"
+                                                >
+                                                            Overview:
+                                                </span>
+                                                overview
+                                    </p>
+                        </div>
+            </div>
+</div>,
+          "className": "card",
+        },
+        "ref": null,
+        "rendered": Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <div
+                className="front"
+>
+                <img
+                                src="https://image.tmdb.org/t/p/w500.asdf"
+                />
+</div>,
+              <div
+                className="back"
+>
+                <header>
+                                <h3>
+                                                title
+                                </h3>
+                </header>
+                <div
+                                className="card-body"
+                >
+                                <p>
+                                                <span
+                                                                className="release-date"
+                                                >
+                                                                Release Date:
+                                                </span>
+                                                date
+                                </p>
+                                <p>
+                                                <span
+                                                                className="vote"
+                                                >
+                                                                Vote Average:
+                                                </span>
+                                                2
+                                </p>
+                                <p>
+                                                <span
+                                                                className="vote"
+                                                >
+                                                                Overview:
+                                                </span>
+                                                overview
+                                </p>
+                </div>
+</div>,
+            ],
+            "className": "flipper",
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": <img
+                  src="https://image.tmdb.org/t/p/w500.asdf"
+/>,
+                "className": "front",
+              },
+              "ref": null,
+              "rendered": Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "src": "https://image.tmdb.org/t/p/w500.asdf",
+                },
+                "ref": null,
+                "rendered": null,
+                "type": "img",
+              },
+              "type": "div",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": Array [
+                  <header>
+                    <h3>
+                                        title
+                    </h3>
+</header>,
+                  <div
+                    className="card-body"
+>
+                    <p>
+                                        <span
+                                                            className="release-date"
+                                        >
+                                                            Release Date:
+                                        </span>
+                                        date
+                    </p>
+                    <p>
+                                        <span
+                                                            className="vote"
+                                        >
+                                                            Vote Average:
+                                        </span>
+                                        2
+                    </p>
+                    <p>
+                                        <span
+                                                            className="vote"
+                                        >
+                                                            Overview:
+                                        </span>
+                                        overview
+                    </p>
+</div>,
+                ],
+                "className": "back",
+              },
+              "ref": null,
+              "rendered": Array [
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": <h3>
+                      title
+</h3>,
+                  },
+                  "ref": null,
+                  "rendered": Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": "title",
+                    },
+                    "ref": null,
+                    "rendered": "title",
+                    "type": "h3",
+                  },
+                  "type": "header",
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": Array [
+                      <p>
+                        <span
+                                                className="release-date"
+                        >
+                                                Release Date:
+                        </span>
+                        date
+</p>,
+                      <p>
+                        <span
+                                                className="vote"
+                        >
+                                                Vote Average:
+                        </span>
+                        2
+</p>,
+                      <p>
+                        <span
+                                                className="vote"
+                        >
+                                                Overview:
+                        </span>
+                        overview
+</p>,
+                    ],
+                    "className": "card-body",
+                  },
+                  "ref": null,
+                  "rendered": Array [
+                    Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "host",
+                      "props": Object {
+                        "children": Array [
+                          <span
+                            className="release-date"
+>
+                            Release Date:
+</span>,
+                          "date",
+                        ],
+                      },
+                      "ref": null,
+                      "rendered": Array [
+                        Object {
+                          "instance": null,
+                          "key": undefined,
+                          "nodeType": "host",
+                          "props": Object {
+                            "children": "Release Date:",
+                            "className": "release-date",
+                          },
+                          "ref": null,
+                          "rendered": "Release Date:",
+                          "type": "span",
+                        },
+                        "date",
+                      ],
+                      "type": "p",
+                    },
+                    Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "host",
+                      "props": Object {
+                        "children": Array [
+                          <span
+                            className="vote"
+>
+                            Vote Average:
+</span>,
+                          "2",
+                        ],
+                      },
+                      "ref": null,
+                      "rendered": Array [
+                        Object {
+                          "instance": null,
+                          "key": undefined,
+                          "nodeType": "host",
+                          "props": Object {
+                            "children": "Vote Average:",
+                            "className": "vote",
+                          },
+                          "ref": null,
+                          "rendered": "Vote Average:",
+                          "type": "span",
+                        },
+                        "2",
+                      ],
+                      "type": "p",
+                    },
+                    Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "host",
+                      "props": Object {
+                        "children": Array [
+                          <span
+                            className="vote"
+>
+                            Overview:
+</span>,
+                          "overview",
+                        ],
+                      },
+                      "ref": null,
+                      "rendered": Array [
+                        Object {
+                          "instance": null,
+                          "key": undefined,
+                          "nodeType": "host",
+                          "props": Object {
+                            "children": "Overview:",
+                            "className": "vote",
+                          },
+                          "ref": null,
+                          "rendered": "Overview:",
+                          "type": "span",
+                        },
+                        "overview",
+                      ],
+                      "type": "p",
+                    },
+                  ],
+                  "type": "div",
+                },
+              ],
+              "type": "div",
+            },
+          ],
+          "type": "div",
+        },
+        "type": "div",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            "FAVORITE",
+            <FaVideoCamera
+              className="video-icon"
+/>,
+          ],
+          "className": "btn-card-favorite",
+          "onClick": [Function],
+        },
+        "ref": null,
+        "rendered": Array [
+          "FAVORITE",
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "function",
+            "props": Object {
+              "className": "video-icon",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+        ],
+        "type": "button",
+      },
+    ],
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <div
+            className="card"
+>
+            <div
+                        className="flipper"
+            >
+                        <div
+                                    className="front"
+                        >
+                                    <img
+                                                src="https://image.tmdb.org/t/p/w500.asdf"
+                                    />
+                        </div>
+                        <div
+                                    className="back"
+                        >
+                                    <header>
+                                                <h3>
+                                                            title
+                                                </h3>
+                                    </header>
+                                    <div
+                                                className="card-body"
+                                    >
+                                                <p>
+                                                            <span
+                                                                        className="release-date"
+                                                            >
+                                                                        Release Date:
+                                                            </span>
+                                                            date
+                                                </p>
+                                                <p>
+                                                            <span
+                                                                        className="vote"
+                                                            >
+                                                                        Vote Average:
+                                                            </span>
+                                                            2
+                                                </p>
+                                                <p>
+                                                            <span
+                                                                        className="vote"
+                                                            >
+                                                                        Overview:
+                                                            </span>
+                                                            overview
+                                                </p>
+                                    </div>
+                        </div>
+            </div>
+</div>,
+          <button
+            className="btn-card-favorite"
+            onClick={[Function]}
+>
+            FAVORITE
+            <FaVideoCamera
+                        className="video-icon"
+            />
+</button>,
+        ],
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": <div
+              className="flipper"
+>
+              <div
+                            className="front"
+              >
+                            <img
+                                          src="https://image.tmdb.org/t/p/w500.asdf"
+                            />
+              </div>
+              <div
+                            className="back"
+              >
+                            <header>
+                                          <h3>
+                                                        title
+                                          </h3>
+                            </header>
+                            <div
+                                          className="card-body"
+                            >
+                                          <p>
+                                                        <span
+                                                                      className="release-date"
+                                                        >
+                                                                      Release Date:
+                                                        </span>
+                                                        date
+                                          </p>
+                                          <p>
+                                                        <span
+                                                                      className="vote"
+                                                        >
+                                                                      Vote Average:
+                                                        </span>
+                                                        2
+                                          </p>
+                                          <p>
+                                                        <span
+                                                                      className="vote"
+                                                        >
+                                                                      Overview:
+                                                        </span>
+                                                        overview
+                                          </p>
+                            </div>
+              </div>
+</div>,
+            "className": "card",
+          },
+          "ref": null,
+          "rendered": Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": Array [
+                <div
+                  className="front"
+>
+                  <img
+                                    src="https://image.tmdb.org/t/p/w500.asdf"
+                  />
+</div>,
+                <div
+                  className="back"
+>
+                  <header>
+                                    <h3>
+                                                      title
+                                    </h3>
+                  </header>
+                  <div
+                                    className="card-body"
+                  >
+                                    <p>
+                                                      <span
+                                                                        className="release-date"
+                                                      >
+                                                                        Release Date:
+                                                      </span>
+                                                      date
+                                    </p>
+                                    <p>
+                                                      <span
+                                                                        className="vote"
+                                                      >
+                                                                        Vote Average:
+                                                      </span>
+                                                      2
+                                    </p>
+                                    <p>
+                                                      <span
+                                                                        className="vote"
+                                                      >
+                                                                        Overview:
+                                                      </span>
+                                                      overview
+                                    </p>
+                  </div>
+</div>,
+              ],
+              "className": "flipper",
+            },
+            "ref": null,
+            "rendered": Array [
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": <img
+                    src="https://image.tmdb.org/t/p/w500.asdf"
+/>,
+                  "className": "front",
+                },
+                "ref": null,
+                "rendered": Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "src": "https://image.tmdb.org/t/p/w500.asdf",
+                  },
+                  "ref": null,
+                  "rendered": null,
+                  "type": "img",
+                },
+                "type": "div",
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": Array [
+                    <header>
+                      <h3>
+                                            title
+                      </h3>
+</header>,
+                    <div
+                      className="card-body"
+>
+                      <p>
+                                            <span
+                                                                  className="release-date"
+                                            >
+                                                                  Release Date:
+                                            </span>
+                                            date
+                      </p>
+                      <p>
+                                            <span
+                                                                  className="vote"
+                                            >
+                                                                  Vote Average:
+                                            </span>
+                                            2
+                      </p>
+                      <p>
+                                            <span
+                                                                  className="vote"
+                                            >
+                                                                  Overview:
+                                            </span>
+                                            overview
+                      </p>
+</div>,
+                  ],
+                  "className": "back",
+                },
+                "ref": null,
+                "rendered": Array [
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": <h3>
+                        title
+</h3>,
+                    },
+                    "ref": null,
+                    "rendered": Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "host",
+                      "props": Object {
+                        "children": "title",
+                      },
+                      "ref": null,
+                      "rendered": "title",
+                      "type": "h3",
+                    },
+                    "type": "header",
+                  },
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": Array [
+                        <p>
+                          <span
+                                                    className="release-date"
+                          >
+                                                    Release Date:
+                          </span>
+                          date
+</p>,
+                        <p>
+                          <span
+                                                    className="vote"
+                          >
+                                                    Vote Average:
+                          </span>
+                          2
+</p>,
+                        <p>
+                          <span
+                                                    className="vote"
+                          >
+                                                    Overview:
+                          </span>
+                          overview
+</p>,
+                      ],
+                      "className": "card-body",
+                    },
+                    "ref": null,
+                    "rendered": Array [
+                      Object {
+                        "instance": null,
+                        "key": undefined,
+                        "nodeType": "host",
+                        "props": Object {
+                          "children": Array [
+                            <span
+                              className="release-date"
+>
+                              Release Date:
+</span>,
+                            "date",
+                          ],
+                        },
+                        "ref": null,
+                        "rendered": Array [
+                          Object {
+                            "instance": null,
+                            "key": undefined,
+                            "nodeType": "host",
+                            "props": Object {
+                              "children": "Release Date:",
+                              "className": "release-date",
+                            },
+                            "ref": null,
+                            "rendered": "Release Date:",
+                            "type": "span",
+                          },
+                          "date",
+                        ],
+                        "type": "p",
+                      },
+                      Object {
+                        "instance": null,
+                        "key": undefined,
+                        "nodeType": "host",
+                        "props": Object {
+                          "children": Array [
+                            <span
+                              className="vote"
+>
+                              Vote Average:
+</span>,
+                            "2",
+                          ],
+                        },
+                        "ref": null,
+                        "rendered": Array [
+                          Object {
+                            "instance": null,
+                            "key": undefined,
+                            "nodeType": "host",
+                            "props": Object {
+                              "children": "Vote Average:",
+                              "className": "vote",
+                            },
+                            "ref": null,
+                            "rendered": "Vote Average:",
+                            "type": "span",
+                          },
+                          "2",
+                        ],
+                        "type": "p",
+                      },
+                      Object {
+                        "instance": null,
+                        "key": undefined,
+                        "nodeType": "host",
+                        "props": Object {
+                          "children": Array [
+                            <span
+                              className="vote"
+>
+                              Overview:
+</span>,
+                            "overview",
+                          ],
+                        },
+                        "ref": null,
+                        "rendered": Array [
+                          Object {
+                            "instance": null,
+                            "key": undefined,
+                            "nodeType": "host",
+                            "props": Object {
+                              "children": "Overview:",
+                              "className": "vote",
+                            },
+                            "ref": null,
+                            "rendered": "Overview:",
+                            "type": "span",
+                          },
+                          "overview",
+                        ],
+                        "type": "p",
+                      },
+                    ],
+                    "type": "div",
+                  },
+                ],
+                "type": "div",
+              },
+            ],
+            "type": "div",
+          },
+          "type": "div",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              "FAVORITE",
+              <FaVideoCamera
+                className="video-icon"
+/>,
+            ],
+            "className": "btn-card-favorite",
+            "onClick": [Function],
+          },
+          "ref": null,
+          "rendered": Array [
+            "FAVORITE",
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "function",
+              "props": Object {
+                "className": "video-icon",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+          ],
+          "type": "button",
+        },
+      ],
+      "type": "div",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
+`;
