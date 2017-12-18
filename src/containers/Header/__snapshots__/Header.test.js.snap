@@ -30,7 +30,9 @@ ShallowWrapper {
           <button
                     className="btn-header-favorite"
           >
-                    Favorites
+                    <FaVideoCamera
+                              className="favorite-icon"
+                    />
           </button>
 </Link>,
         <Link
@@ -76,7 +78,9 @@ ShallowWrapper {
           "children": <button
             className="btn-header-favorite"
 >
-            Favorites
+            <FaVideoCamera
+                        className="favorite-icon"
+            />
 </button>,
           "replace": false,
           "to": "/favorites",
@@ -87,11 +91,23 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "host",
           "props": Object {
-            "children": "Favorites",
+            "children": <FaVideoCamera
+              className="favorite-icon"
+/>,
             "className": "btn-header-favorite",
           },
           "ref": null,
-          "rendered": "Favorites",
+          "rendered": Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "function",
+            "props": Object {
+              "className": "favorite-icon",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
           "type": "button",
         },
         "type": [Function],
@@ -213,7 +229,9 @@ ShallowWrapper {
             <button
                         className="btn-header-favorite"
             >
-                        Favorites
+                        <FaVideoCamera
+                                    className="favorite-icon"
+                        />
             </button>
 </Link>,
           <Link
@@ -259,7 +277,9 @@ ShallowWrapper {
             "children": <button
               className="btn-header-favorite"
 >
-              Favorites
+              <FaVideoCamera
+                            className="favorite-icon"
+              />
 </button>,
             "replace": false,
             "to": "/favorites",
@@ -270,11 +290,23 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "host",
             "props": Object {
-              "children": "Favorites",
+              "children": <FaVideoCamera
+                className="favorite-icon"
+/>,
               "className": "btn-header-favorite",
             },
             "ref": null,
-            "rendered": "Favorites",
+            "rendered": Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "function",
+              "props": Object {
+                "className": "favorite-icon",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
             "type": "button",
           },
           "type": [Function],
