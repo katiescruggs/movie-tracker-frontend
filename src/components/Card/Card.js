@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import * as actions from '../../actions';
 import { connect } from 'react-redux';
-import StarIcon from 'react-icons/lib/fa/star'
+import VideoCamera from 'react-icons/lib/fa/video-camera'
 import './Card.css'
 
 const Card = ({userId, addFav, removeFav, movie, favorites, path}) => {
@@ -28,9 +28,9 @@ const Card = ({userId, addFav, removeFav, movie, favorites, path}) => {
             <h3>{title}</h3>
           </header>
           <div className='card-body'>
-            <p>{`Release Date: ${release_date}`}</p>
-            <p>{`Vote Average: ${vote_average}`}</p>
-            <p>{`Overview: ${overview}`}</p>
+            <p><span className='release-date'>Release Date: </span>{release_date}</p>
+            <p><span className='vote'>Vote Average: </span>{vote_average}</p>
+            <p><span className='vote'>Overview: </span>{overview}</p>
           </div>
         </div>
       </div>
@@ -41,7 +41,7 @@ const Card = ({userId, addFav, removeFav, movie, favorites, path}) => {
         className={buttonClass}
         >
           FAVORITE 
-          <StarIcon className='star-icon'/>
+          <VideoCamera className='video-icon'/>
         </button>
     </div>
   );

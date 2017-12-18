@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Link, browserHistory } from 'react-router-dom';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
+import CloseIcon from 'react-icons/lib/fa/close'
 import './Login.css';
 import * as actions from '../../actions';
 
@@ -54,7 +55,7 @@ class Login extends Component {
         <div className='login'>
             <h3 className='modal-title'>{modalTitle}</h3>
               <Link to="/">
-                <button className="close-btn">x</button>
+                <button className="btn-close"><CloseIcon /></button>
               </Link>
             {errorMessage}
             {nameInput}

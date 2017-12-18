@@ -12,8 +12,9 @@
   background-color: #B22628;
   height: 100px;
   padding: 20px;
-  color: white;
-  // display: inline-block;
+  & a {
+    color: #fff;
+  }
 }
 
 .btn-log-in {
@@ -23,6 +24,7 @@
   right: 85px;
   background: none;
   border: none;
+  color: #1c285b;
   font-size: 13pt;
   outline: none;
 }
@@ -35,6 +37,7 @@
   border: none;
   font-size: 13pt;
   outline: none;
+  color: #1c285b;
 }
 
 .btn-header-favorite {
@@ -45,6 +48,7 @@
   border: none;
   font-size: 13pt;
   outline: none;
+  color: #1c285b;
 }
 
 .btn-sign-up,

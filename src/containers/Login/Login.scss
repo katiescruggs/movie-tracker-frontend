@@ -14,16 +14,34 @@
   z-index: 1;
 }
 
+.btn-close {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  background: none;
+  border: none;
+  font-size: 14pt;
+  color: #1c285b;
+  &:hover {
+    cursor: pointer;
+    color: #fff;
+  }
+}
+
 .input-field,
 .btn-submit {
   margin-top: 20px;
   height: 30px;
   width: 75%;
   font-size: 14pt;
+
 }
 
 .btn-submit {
   margin-bottom: 30px;
+  color: #fff;
+  background-color: #1c285b;
+  border: none;
 }
 
 .modal-title {
