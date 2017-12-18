@@ -38,15 +38,15 @@ ShallowWrapper {
     "nodeType": "host",
     "props": Object {
       "children": Array [
-        <Connect(Card)
+        <Connect(Component)
           movie="array"
           path="current-path"
 />,
-        <Connect(Card)
+        <Connect(Component)
           movie="of"
           path="current-path"
 />,
-        <Connect(Card)
+        <Connect(Component)
           movie="movies"
           path="current-path"
 />,
@@ -101,15 +101,15 @@ ShallowWrapper {
       "nodeType": "host",
       "props": Object {
         "children": Array [
-          <Connect(Card)
+          <Connect(Component)
             movie="array"
             path="current-path"
 />,
-          <Connect(Card)
+          <Connect(Component)
             movie="of"
             path="current-path"
 />,
-          <Connect(Card)
+          <Connect(Component)
             movie="movies"
             path="current-path"
 />,

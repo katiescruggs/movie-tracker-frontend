@@ -30,6 +30,7 @@ describe('CardContainer tests', () => {
       const result = mapStateToProps(mockStore);
       expect(result.movies).toEqual(mockStore.movies);
     });
+    
     it('should pull favorites from the store', () => {
       const mockStore = {
         movies: [{title: 'Star Wars'}],

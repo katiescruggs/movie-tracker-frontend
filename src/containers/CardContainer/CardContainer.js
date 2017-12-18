@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import Card from '../../components/Card/Card';
+import Card from '../Card/Card';
 import './CardContainer.css';
 
 export const CardContainer = ({movies, favorites, location}) => {
