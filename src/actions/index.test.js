@@ -23,7 +23,7 @@ describe('all actions', () => {
     it('userLoginError returns an obj with type of USER_LOGIN_ERROR', () => {
       const expected = {
         type: 'USER_LOGIN_ERROR',
-        errorMessage: 'Login failed, please check your email and password'
+        errorMessage: 'Login failed, please try again.'
       };
 
       expect(actions.userLoginError()).toEqual(expected);
@@ -32,7 +32,7 @@ describe('all actions', () => {
     it('userSignupError returns an obj with type of USER_SIGNUP_ERROR', () => {
       const expected = {
         type: 'USER_SIGNUP_ERROR',
-        errorMessage: 'SIGN UP ERROR'
+        errorMessage: 'Sign up failed, please try again.'
       };
 
       expect(actions.userSignupError()).toEqual(expected);
