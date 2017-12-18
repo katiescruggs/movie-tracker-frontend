@@ -4,7 +4,6 @@ import * as actions from '../actions'
 describe('favoritesReducer tests', () => {
   
   it('should return default state', () => {
-    //state is undefined as empty array
     const expected = [];
     expect(favoritesReducer(undefined, {})).toEqual(expected)
   })
