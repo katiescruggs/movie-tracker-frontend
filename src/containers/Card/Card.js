@@ -17,7 +17,7 @@ export const Card = ({userId, addFav, removeFav, movie, favorites, path}) => {
   const buttonClass = isFav ? 'btn-card-favorite fav' : 'btn-card-favorite';
 
   return (
-    <div>
+    <div className='card-wrapper'>
       <div className="card">
         <div className='flipper'>
           <div className='front'>
@@ -40,7 +40,7 @@ export const Card = ({userId, addFav, removeFav, movie, favorites, path}) => {
                 {vote_average}
               </p>
               <p>
-                <span className='vote'>
+                <span className='overview'>
                   Overview: 
                 </span>
                 {overview}
