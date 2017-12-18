@@ -10,8 +10,8 @@ export const CardContainer = ({movies, favorites, location}) => {
   
   const cards = displayArray.map((movie) => {
     return <Card
+      key={`Card: ${movie.id}`}
       path={location.pathname}
-      key={movie.id}
       movie={movie} 
     />;
   });
