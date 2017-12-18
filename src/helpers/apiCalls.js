@@ -7,7 +7,7 @@ export const fetchRecentMovies = async () => {
     return movies.results;
 
   } catch (error) {
-    throw Error('Fetch movies failed!');
+    return  error;
   }
 };
 
@@ -53,10 +53,6 @@ export const postCreateUser = async (userPayload) => {
   }
 };
 
-export const getCurrentUser = async () => {
-
-};
-
 export const postAddFavorite = async (userId, movie) => {
   const addFavPayload = {
     movie_id: movie.id,
@@ -67,7 +63,7 @@ export const postAddFavorite = async (userId, movie) => {
     vote_average: movie.vote_average,
     overview: movie.overview
   };
-  console.log(addFavPayload)
+
   try {
     const addFavResponse = await fetch('/api/users/favorites/new', {
       method: 'POST', 
@@ -104,10 +100,4 @@ export const fetchFavorites = async (userId) => {
   const favoritesResponse = await fetch(`api/users/${userId}/favorites`);
   const favorites = await favoritesResponse.json();
   return favorites;
-}
-
-
-
-
-
-
+};
