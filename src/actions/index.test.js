@@ -4,10 +4,15 @@ describe('all actions', () => {
   describe('user actions', () => {
     let userInfo;
     beforeEach( () => {
-      userInfo = {id: 1, name: 'Yung Jhun', email: 'Jhun@gmail.com', password: 'password'}
+      userInfo = {
+        id: 1, 
+        name: 'Yung Jhun', 
+        email: 'Jhun@gmail.com', 
+        password: 'password'
+      };
     });
 
-    it('userLoginSuccess returns an obj with type of USER_LOGIN_SUCCESS', () => {
+    it('userLoginSuccess returns an obj with type', () => {
       const expected = {
         type: 'USER_LOGIN_SUCCESS',
         userInfo
@@ -18,15 +23,18 @@ describe('all actions', () => {
     it('userLoginError returns an obj with type of USER_LOGIN_ERROR', () => {
       const expected = {
         type: 'USER_LOGIN_ERROR',
-        userInfo
+        errorMessage: 'Login failed, please check your email and password'
       };
+
+      expect(actions.userLoginError()).toEqual(expected);
     });
 
     it('userSignupError returns an obj with type of USER_SIGNUP_ERROR', () => {
       const expected = {
-      type: 'USER_SIGNUP_ERROR',
-      errorMessage: 'SIGN UP ERROR'
+        type: 'USER_SIGNUP_ERROR',
+        errorMessage: 'SIGN UP ERROR'
       };
+
       expect(actions.userSignupError()).toEqual(expected);
     });
 
@@ -50,30 +58,37 @@ describe('all actions', () => {
 
   describe('movie actions', () => {
     it('setMovies returns an obj with type of SET_MOVIES', () => {
-      const movies = [{ title: 'Casper' }, { title: 'Thor' }, { title: 'Batman' }]
+      const movies = [
+        { title: 'Casper' }, 
+        { title: 'Thor' }, 
+        { title: 'Batman' }];
       const expected = {
         type: 'SET_MOVIES',
         movies
       };
-      expect(actions.setMovies(movies)).toEqual(expected)
+      expect(actions.setMovies(movies)).toEqual(expected);
     });  
   });
 
   describe('favorite actions', () => {
     it('setFavorites returns an obj  with type of SET_FAVORITES', () => {
-      const favorites = [{ title: 'Casper' }, { title: 'Thor' }, { title: 'Batman' }];
+      const favorites = [
+        { title: 'Casper' }, 
+        { title: 'Thor' }, 
+        { title: 'Batman' }];
       const expected = {
         type: 'SET_FAVORITES',
         favorites
       };
+      expect(actions.setFavorites(favorites)).toEqual(expected);
     });
 
     it('clearFavorites returns an obj with type of CLEAR_FAVORITES', () => {
-      const favorites = [{ title: 'Casper' }, { title: 'Thor' }, { title: 'Batman' }];
       const expected = {
-        type: 'CLEAR_FAVORITES',
-        favorites
+        type: 'CLEAR_FAVORITES'
       };
+
+      expect(actions.clearFavorites()).toEqual(expected);
     });
   });
 });

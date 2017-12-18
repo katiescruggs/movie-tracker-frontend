@@ -1,4 +1,4 @@
-import { combineReducers } from 'redux'
+import { combineReducers } from 'redux';
 import moviesReducer from './moviesReducer.js';
 import userReducer from './userReducer.js';
 import errorReducer from './errorReducer.js';

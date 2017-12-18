@@ -2,6 +2,7 @@ import apiKey from '../apiKey.js';
 
 export const fetchRecentMovies = async () => {
   try {
+    //eslint-disable-next-line max-len
     const movieResponse = await fetch(`https://api.themoviedb.org/3/movie/now_playing?api_key=${apiKey}`);
     const movies = await movieResponse.json();
     return movies.results;
@@ -21,7 +22,7 @@ export const postLogin = async (userPayload) => {
       body: JSON.stringify(userPayload)
     });
 
-    if(fetchUser.status >= 400) {
+    if (fetchUser.status >= 400) {
       return null;
     } else {
       const user = await fetchUser.json();
@@ -42,7 +43,7 @@ export const postCreateUser = async (userPayload) => {
       },
       body: JSON.stringify(userPayload)
     });
-    if(postUser.status >= 400) {
+    if (postUser.status >= 400) {
       return null;
     } else {
       const newUser = await postUser.json();
@@ -77,11 +78,12 @@ export const postAddFavorite = async (userId, movie) => {
   } catch (error) {
     return null;
   }
-}
+};
 
 export const postRemoveFavorite = async (userId, movieId) => {
   const removeFavPayload = {user_id: userId, movie_id: movieId};
   try {
+    //eslint-disable-next-line max-len
     const removeFavResponse = await fetch(`/api/users/${userId}/favorites/${movieId}`, {
       method: 'DELETE',
       headers: {
@@ -94,7 +96,7 @@ export const postRemoveFavorite = async (userId, movieId) => {
   } catch (error) {
     return null;
   }
-}
+};
 
 export const fetchFavorites = async (userId) => {
   const favoritesResponse = await fetch(`api/users/${userId}/favorites`);
