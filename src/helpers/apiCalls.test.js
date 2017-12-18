@@ -1,4 +1,3 @@
-import React from 'react';
 import * as apiCalls from './apiCalls.js';
 
 describe('movie API call', () => {
@@ -31,13 +30,14 @@ describe('user API calls', () => {
   it('postLogin should return user data if successful', async () => {
     window.fetch = jest.fn().mockImplementation(() => Promise.resolve({
       json: () => Promise.resolve(
-          {
-            data: {
-              user: 'info'
-            }
+        {
+          //eslint-disable-next-line id-blacklist
+          data: {
+            user: 'info'
           }
-        )
-      }));
+        }
+      )
+    }));
     const userData = await apiCalls.postLogin({user: 'payload'});
     expect(userData).toEqual({user: 'info'});
   });
@@ -46,11 +46,11 @@ describe('user API calls', () => {
   it('postCreateUser should return user id if successful', async () => {
     window.fetch = jest.fn().mockImplementation(() => Promise.resolve({
       json: () => Promise.resolve(
-          {
-            id: 0
-          }
-        )
-      }));
+        {
+          id: 0
+        }
+      )
+    }));
 
     const userId = await apiCalls.postCreateUser({user: 'payload'});
     expect(userId).toEqual(0);

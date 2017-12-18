@@ -12,7 +12,7 @@ export class Login extends Component {
     this.state = {
       name: '',
       email: '',
-      password: '',
+      password: ''
     };
   }
 

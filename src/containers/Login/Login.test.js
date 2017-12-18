@@ -1,6 +1,5 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import * as actions from '../../actions/';
 import { Login, mapStateToProps, mapDispatchToProps } from './Login';
 
 describe('Login Container', () => {
@@ -36,15 +35,18 @@ describe('Login Container', () => {
         name: '', 
         email: '', 
         password: ''
-      }
+      };
 
       expect(login.state()).toEqual(expectedDefault);
     });
 
     it('should update state based on input changes', () => {
-      const mockNameEvent = {target: {value: 'name value', name: 'name'}};
-      const mockEmailEvent = {target: {value: 'email value', name: 'email'}};
-      const mockPasswordEvent = {target: {value: 'password value', name: 'password'}};
+      const mockNameEvent = 
+        {target: {value: 'name value', name: 'name'}};
+      const mockEmailEvent = 
+        {target: {value: 'email value', name: 'email'}};
+      const mockPasswordEvent = 
+        {target: {value: 'password value', name: 'password'}};
     
       login.instance().handleInputChange(mockNameEvent);
       login.instance().handleInputChange(mockEmailEvent);
@@ -71,9 +73,12 @@ describe('Login Container', () => {
         password: ''
       };
 
-      const mockNameEvent = {target: {value: 'name value', name: 'name'}};
-      const mockEmailEvent = {target: {value: 'email value', name: 'email'}};
-      const mockPasswordEvent = {target: {value: 'password value', name: 'password'}};
+      const mockNameEvent = 
+        {target: {value: 'name value', name: 'name'}};
+      const mockEmailEvent = 
+        {target: {value: 'email value', name: 'email'}};
+      const mockPasswordEvent = 
+        {target: {value: 'password value', name: 'password'}};
     
       login.instance().handleInputChange(mockNameEvent);
       login.instance().handleInputChange(mockEmailEvent);
