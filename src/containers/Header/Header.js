@@ -1,57 +1,56 @@
 import React, { Component } from 'react';
-import { Link, browserHistory } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { fetchMovies, logout } from '../../actions';
-
+import propTypes from 'prop-types';
 
 class Header extends Component {
+  async componentDidMount() {
+    this.props.handleFetch();
+  }
 
-   async componentDidMount() {
-     this.props.handleFetch();
-   }
-
-   componentWillUpdate(nextProps) {
-    if(nextProps.signedIn && !this.props.signedIn) {
+  componentWillUpdate(nextProps) {
+    if (nextProps.signedIn && !this.props.signedIn) {
       this.props.history.push('/');
     }
-   }
+  }
 
   render() {
     const favoritesButton = this.props.signedIn 
       ? <Link to="/favorites">
-          <button
-            className="btn-header-favorite"
-          >
-            Favorites
-          </button>
-        </Link>
+        <button
+          className="btn-header-favorite"
+        >
+          Favorites
+        </button>       
+      </Link>
       : null;
 
     const buttons = this.props.signedIn 
       ? <div className="welcome-msg"> 
-          <p className="btn-log-in">{`Welcome, ${this.props.name}`}</p>
-          <Link to='/'>
-            <button 
-              className='btn-sign-up'
-              onClick={this.props.handleLogout}
-            >
-              Log Out
-            </button>
-          </Link>
-        </div>
+        <p className="btn-log-in">{`Welcome, ${this.props.name}`}</p>
+        <Link to='/'>
+          <button 
+            className='btn-sign-up'
+            onClick={this.props.handleLogout}
+          >
+            Log Out
+          </button>
+        </Link>
+      </div>
 
       : <div>
-          <Link to='/login'>
-            <button className='btn-log-in'>
-              Log In
-            </button>
-          </Link>
-          <Link to='/register'>
-            <button className='btn-sign-up'>
-              Sign Up
-            </button>
-          </Link>
-        </div> 
+        <Link to='/login'>
+          <button className='btn-log-in'>
+            Log In
+          </button>
+        </Link>          
+        <Link to='/register'>
+          <button className='btn-sign-up'>
+            Sign Up
+          </button>
+        </Link>
+      </div>; 
 
     return (
       <header className="App-header">
@@ -84,3 +83,11 @@ export const mapDispatchToProps = dispatch => {
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Header);
+
+Header.propTypes = {
+  handleFetch: propTypes.func,
+  signedIn: propTypes.bool,
+  history: propTypes.array,
+  name: propTypes.string,
+  handleLogout: propTypes.func
+};

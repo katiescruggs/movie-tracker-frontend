@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { Route } from 'react-router-dom';
 import Header from '../Header/Header.js';
-import PropTypes from 'prop-types';
 import Routes from '../../components/Routes/Routes.js';
 import './App.css';
 

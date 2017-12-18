@@ -2,8 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import * as actions from '../../actions';
 import { connect } from 'react-redux';
-import VideoCamera from 'react-icons/lib/fa/video-camera'
-import './Card.css'
+import VideoCamera from 'react-icons/lib/fa/video-camera';
+import './Card.css';
 
 const Card = ({userId, addFav, removeFav, movie, favorites, path}) => {
   const isFav = favorites.find(fav => (fav.title === movie.title));
@@ -18,37 +18,55 @@ const Card = ({userId, addFav, removeFav, movie, favorites, path}) => {
 
   return (
     <div>
-    <div className="card">
-      <div className='flipper'>
-        <div className='front'>
-          <img src={`https://image.tmdb.org/t/p/w500${poster_path}`} />
-        </div>
-        <div className='back'>
-          <header>
-            <h3>{title}</h3>
-          </header>
-          <div className='card-body'>
-            <p><span className='release-date'>Release Date: </span>{release_date}</p>
-            <p><span className='vote'>Vote Average: </span>{vote_average}</p>
-            <p><span className='vote'>Overview: </span>{overview}</p>
+      <div className="card">
+        <div className='flipper'>
+          <div className='front'>
+            <img src={`https://image.tmdb.org/t/p/w500${poster_path}`} />
+          </div>
+          <div className='back'>
+            <header>
+              <h3>{title}</h3>
+            </header>
+            <div className='card-body'>
+              <p>
+                <span className='release-date'>
+                  Release Date: 
+                </span>{release_date}
+              </p>
+              <p>
+                <span className='vote'>
+                  Vote Average: 
+                </span>
+                {vote_average}
+              </p>
+              <p>
+                <span className='vote'>
+                  Overview: 
+                </span>
+                {overview}
+              </p>
+            </div>
           </div>
         </div>
       </div>
-
-    </div>
       <button 
         onClick={favoriteClick} 
         className={buttonClass}
-        >
-          FAVORITE 
-          <VideoCamera className='video-icon'/>
-        </button>
+      >
+        FAVORITE 
+        <VideoCamera className='video-icon'/>
+      </button>
     </div>
   );
 };
 
 Card.propTypes = {
-  movie: PropTypes.object
+  movie: PropTypes.object,
+  userId: PropTypes.number,
+  addFav: PropTypes.func,
+  removeFav: PropTypes.func,
+  favorites: PropTypes.array,
+  path: PropTypes.string
 };
 
 const mapStateToProps = state => ({
@@ -64,8 +82,7 @@ const mapDispatchToProps = dispatch => {
     removeFav: (userId, favId) => {
       dispatch(actions.removeFavorite(userId, favId));
     }
-  }
+  };
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Card);
-
