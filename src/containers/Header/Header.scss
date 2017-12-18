@@ -1,0 +1,58 @@
+.App-header {
+  background-color: #B22628;
+  height: 100px;
+  padding: 20px;
+  & a {
+    color: #fff;
+  }
+}
+
+.btn-log-in {
+  display: inline-block;
+  position: absolute;
+  top: 5px;
+  right: 85px;
+  background: none;
+  border: none;
+  color: #1c285b;
+  font-size: 13pt;
+  outline: none;
+}
+
+.btn-sign-up {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  background: none;
+  border: none;
+  font-size: 13pt;
+  outline: none;
+  color: #1c285b;
+}
+
+.btn-header-favorite {
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  background: none;
+  border: none;
+  font-size: 13pt;
+  outline: none;
+  color: #1c285b;
+}
+
+.btn-sign-up,
+.btn-log-in,
+.btn-header-favorite {
+  &:hover {
+    cursor: pointer;
+    color: white;
+  }
+}
+
+.App-title {
+  font-size: 50pt;
+  display: inline-block;
+  font-family: 'CanterBold3D', sans-serif;
+  letter-spacing: .4em;
+}
