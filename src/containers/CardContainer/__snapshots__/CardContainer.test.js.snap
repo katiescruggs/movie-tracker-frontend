@@ -4,9 +4,27 @@ exports[`CardContainer tests should match the snapshot 1`] = `
 ShallowWrapper {
   "length": 1,
   Symbol(enzyme.__root__): [Circular],
-  Symbol(enzyme.__unrendered__): <Provider>
-    <Unknown />
-</Provider>,
+  Symbol(enzyme.__unrendered__): <Unknown
+    favorites={
+        Array [
+            "array",
+            "of",
+            "favorites",
+          ]
+    }
+    location={
+        Object {
+            "pathname": "current-path",
+          }
+    }
+    movies={
+        Array [
+            "array",
+            "of",
+            "movies",
+          ]
+    }
+/>,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
     "getNode": [Function],
@@ -17,21 +35,127 @@ ShallowWrapper {
   Symbol(enzyme.__node__): Object {
     "instance": null,
     "key": undefined,
-    "nodeType": "function",
-    "props": Object {},
+    "nodeType": "host",
+    "props": Object {
+      "children": Array [
+        <Connect(Component)
+          movie="array"
+          path="current-path"
+/>,
+        <Connect(Component)
+          movie="of"
+          path="current-path"
+/>,
+        <Connect(Component)
+          movie="movies"
+          path="current-path"
+/>,
+      ],
+      "className": "card-container",
+    },
     "ref": null,
-    "rendered": null,
-    "type": [Function],
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": "Card: undefined",
+        "nodeType": "class",
+        "props": Object {
+          "movie": "array",
+          "path": "current-path",
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": "Card: undefined",
+        "nodeType": "class",
+        "props": Object {
+          "movie": "of",
+          "path": "current-path",
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": "Card: undefined",
+        "nodeType": "class",
+        "props": Object {
+          "movie": "movies",
+          "path": "current-path",
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+    ],
+    "type": "div",
   },
   Symbol(enzyme.__nodes__): Array [
     Object {
       "instance": null,
       "key": undefined,
-      "nodeType": "function",
-      "props": Object {},
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <Connect(Component)
+            movie="array"
+            path="current-path"
+/>,
+          <Connect(Component)
+            movie="of"
+            path="current-path"
+/>,
+          <Connect(Component)
+            movie="movies"
+            path="current-path"
+/>,
+        ],
+        "className": "card-container",
+      },
       "ref": null,
-      "rendered": null,
-      "type": [Function],
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": "Card: undefined",
+          "nodeType": "class",
+          "props": Object {
+            "movie": "array",
+            "path": "current-path",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": "Card: undefined",
+          "nodeType": "class",
+          "props": Object {
+            "movie": "of",
+            "path": "current-path",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": "Card: undefined",
+          "nodeType": "class",
+          "props": Object {
+            "movie": "movies",
+            "path": "current-path",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+      ],
+      "type": "div",
     },
   ],
   Symbol(enzyme.__options__): Object {

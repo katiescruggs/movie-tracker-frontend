@@ -5,7 +5,7 @@ import { connect } from 'react-redux';
 import VideoCamera from 'react-icons/lib/fa/video-camera';
 import './Card.css';
 
-const Card = ({userId, addFav, removeFav, movie, favorites, path}) => {
+export const Card = ({userId, addFav, removeFav, movie, favorites, path}) => {
   const isFav = favorites.find(fav => (fav.title === movie.title));
   
   const favoriteClick = () => {
@@ -69,12 +69,12 @@ Card.propTypes = {
   path: PropTypes.string
 };
 
-const mapStateToProps = state => ({
+export const mapStateToProps = state => ({
   userId: state.user.info.id,
   favorites: state.favorites
 });
 
-const mapDispatchToProps = dispatch => {
+export const mapDispatchToProps = dispatch => {
   return {
     addFav: (userId, movie) => {
       dispatch(actions.addFavorite(userId, movie));

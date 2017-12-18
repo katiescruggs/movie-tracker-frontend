@@ -6,14 +6,13 @@ import CloseIcon from 'react-icons/lib/fa/close';
 import './Login.css';
 import * as actions from '../../actions';
 
-class Login extends Component {
+export class Login extends Component {
   constructor() {
     super();
     this.state = {
       name: '',
       email: '',
       password: '',
-      showRegister: false
     };
   }
 
@@ -92,7 +91,7 @@ class Login extends Component {
   }
 }
 
-const mapStateToProps = state => {
+export const mapStateToProps = state => {
   return {
     name: state.user.info.name,
     errorStatus: state.error.status,
@@ -100,7 +99,7 @@ const mapStateToProps = state => {
   };
 };
 
-const mapDispatchToProps = dispatch => {
+export const mapDispatchToProps = dispatch => {
   return {
     userLoginAttempt: (userInfo) => {
       dispatch(actions.userLoginAttempt(userInfo));
@@ -110,9 +109,6 @@ const mapDispatchToProps = dispatch => {
     },
     getCurrentUser: (userInfo) => {
       dispatch(actions.getCurrentUser(userInfo));
-    },
-    userLogout: (userInfo) => {
-      dispatch(actions.userLogout(userInfo));
     }
   };
 };
@@ -123,7 +119,6 @@ Login.propTypes = {
   userLoginAttempt: PropTypes.func,
   userSignupAttempt: PropTypes.func,
   getCurrentUser: PropTypes.func,
-  userLogout: PropTypes.func,
   errorStatus: PropTypes.bool,
   errorMessage: PropTypes.string
 };

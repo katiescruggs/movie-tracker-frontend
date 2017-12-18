@@ -1,0 +1,373 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Login Container Login should match the snapshot 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <Login
+    errorMessage="an error message here"
+    errorStatus={false}
+    getCurrentUser={[Function]}
+    name="Katie"
+    showRegister={true}
+    userLoginAttempt={[Function]}
+    userSignupAttempt={[Function]}
+/>,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": Array [
+        <h3
+          className="modal-title"
+>
+          Sign Up
+</h3>,
+        <Link
+          replace={false}
+          to="/"
+>
+          <button
+                    className="btn-close"
+          >
+                    <FaClose />
+          </button>
+</Link>,
+        null,
+        <input
+          className="input-field"
+          name="name"
+          onChange={[Function]}
+          placeholder="Name"
+          type="text"
+          value=""
+/>,
+        <input
+          className="input-field"
+          name="email"
+          onChange={[Function]}
+          placeholder="Email"
+          type="email"
+          value=""
+/>,
+        <input
+          className="input-field"
+          name="password"
+          onChange={[Function]}
+          placeholder="Password"
+          type="password"
+          value=""
+/>,
+        <button
+          className="btn-submit"
+          onClick={[Function]}
+>
+          Submit
+</button>,
+      ],
+      "className": "login",
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": "Sign Up",
+          "className": "modal-title",
+        },
+        "ref": null,
+        "rendered": "Sign Up",
+        "type": "h3",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "children": <button
+            className="btn-close"
+>
+            <FaClose />
+</button>,
+          "replace": false,
+          "to": "/",
+        },
+        "ref": null,
+        "rendered": Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": <FaClose />,
+            "className": "btn-close",
+          },
+          "ref": null,
+          "rendered": Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "function",
+            "props": Object {},
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+          "type": "button",
+        },
+        "type": [Function],
+      },
+      null,
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "className": "input-field",
+          "name": "name",
+          "onChange": [Function],
+          "placeholder": "Name",
+          "type": "text",
+          "value": "",
+        },
+        "ref": null,
+        "rendered": null,
+        "type": "input",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "className": "input-field",
+          "name": "email",
+          "onChange": [Function],
+          "placeholder": "Email",
+          "type": "email",
+          "value": "",
+        },
+        "ref": null,
+        "rendered": null,
+        "type": "input",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "className": "input-field",
+          "name": "password",
+          "onChange": [Function],
+          "placeholder": "Password",
+          "type": "password",
+          "value": "",
+        },
+        "ref": null,
+        "rendered": null,
+        "type": "input",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": "Submit",
+          "className": "btn-submit",
+          "onClick": [Function],
+        },
+        "ref": null,
+        "rendered": "Submit",
+        "type": "button",
+      },
+    ],
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <h3
+            className="modal-title"
+>
+            Sign Up
+</h3>,
+          <Link
+            replace={false}
+            to="/"
+>
+            <button
+                        className="btn-close"
+            >
+                        <FaClose />
+            </button>
+</Link>,
+          null,
+          <input
+            className="input-field"
+            name="name"
+            onChange={[Function]}
+            placeholder="Name"
+            type="text"
+            value=""
+/>,
+          <input
+            className="input-field"
+            name="email"
+            onChange={[Function]}
+            placeholder="Email"
+            type="email"
+            value=""
+/>,
+          <input
+            className="input-field"
+            name="password"
+            onChange={[Function]}
+            placeholder="Password"
+            type="password"
+            value=""
+/>,
+          <button
+            className="btn-submit"
+            onClick={[Function]}
+>
+            Submit
+</button>,
+        ],
+        "className": "login",
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": "Sign Up",
+            "className": "modal-title",
+          },
+          "ref": null,
+          "rendered": "Sign Up",
+          "type": "h3",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "children": <button
+              className="btn-close"
+>
+              <FaClose />
+</button>,
+            "replace": false,
+            "to": "/",
+          },
+          "ref": null,
+          "rendered": Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": <FaClose />,
+              "className": "btn-close",
+            },
+            "ref": null,
+            "rendered": Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "function",
+              "props": Object {},
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+            "type": "button",
+          },
+          "type": [Function],
+        },
+        null,
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "className": "input-field",
+            "name": "name",
+            "onChange": [Function],
+            "placeholder": "Name",
+            "type": "text",
+            "value": "",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": "input",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "className": "input-field",
+            "name": "email",
+            "onChange": [Function],
+            "placeholder": "Email",
+            "type": "email",
+            "value": "",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": "input",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "className": "input-field",
+            "name": "password",
+            "onChange": [Function],
+            "placeholder": "Password",
+            "type": "password",
+            "value": "",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": "input",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": "Submit",
+            "className": "btn-submit",
+            "onClick": [Function],
+          },
+          "ref": null,
+          "rendered": "Submit",
+          "type": "button",
+        },
+      ],
+      "type": "div",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
+`;

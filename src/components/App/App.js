@@ -1,7 +1,7 @@
 import React from 'react';
 import { Route } from 'react-router-dom';
-import Header from '../Header/Header.js';
-import Routes from '../../components/Routes/Routes.js';
+import Header from '../../containers/Header/Header.js';
+import Routes from '../Routes/Routes.js';
 import './App.css';
 
 const App = () => {
