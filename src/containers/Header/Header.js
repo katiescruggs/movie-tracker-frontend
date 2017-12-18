@@ -3,8 +3,9 @@ import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { fetchMovies, logout } from '../../actions';
 import propTypes from 'prop-types';
+import './Header.css';
 
-class Header extends Component {
+export class Header extends Component {
   async componentDidMount() {
     this.props.handleFetch();
   }
