@@ -6,6 +6,6 @@ This project was completed with my partner [@jessepackwood](http://github.com/je
 
 This was our first time implementing React Router, our first time using Redux, and our first time posting information to a backend database! We learned so much on this project!
 
-Technologies learned: React, Router, Redux, communicating with backend API (get and post requests), JavaScript, SCSS
+Technologies used: React, Router, Redux, communicating with backend API (get and post requests), JavaScript, SCSS
 
 
